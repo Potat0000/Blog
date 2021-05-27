@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/favicon.png
+favicon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/favicon.png
+apple_touch_icon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -260,7 +260,7 @@ lazyload:
 
   # 加载时的占位图片
   # The placeholder image when loading
-  loading_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/loading.gif
+  loading_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/loading.gif
 
   # 开启后懒加载仅在文章页生效，如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
   # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
@@ -413,7 +413,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -485,7 +485,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -645,7 +645,7 @@ post:
 # Based on GitHub Issues
 # See: https://utteranc.es
 utterances:
-  repo: gyj1109/Blog-Comment
+  repo: Potat0000/Blog-Comment
   issue_term: pathname
   label: utterances
   theme: github-light
@@ -762,7 +762,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -774,7 +774,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -804,7 +804,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -822,17 +822,17 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
-  avatar: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/avatar.webp
+  avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/avatar.webp
   name: "Potat0"
   intro: "Vidar Team | Reverse | Misc"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com/gyj1109", tip: "GitHub" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/Potat0000", tip: "GitHub" }
     - { class: "iconfont icon-mail", link: "mailto:i@potat0.cc", tip: "Email" }
 
 
@@ -844,7 +844,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -855,7 +855,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/404-bg.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/404-bg.webp
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
@@ -867,7 +867,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/background.webp
+  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -1035,13 +1035,13 @@ links:
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
-  onerror_avatar: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/favicon.png
+  onerror_avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
 
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
     enable: false
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/favicon.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png</li></ul>'
 
   # 评论插件
   # Comment plugin
@@ -1066,9 +1066,9 @@ links:
 static_prefix:
   # 内部静态
   # Internal static
-  internal_js: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/js/
-  internal_css: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/css/
-  internal_img: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/
+  internal_js: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/js/
+  internal_css: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/css/
+  internal_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/
 
   anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/
   github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
@@ -1090,4 +1090,4 @@ static_prefix:
   gitalk: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/
   twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.3.0/dist/
-  hint: https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/css/
+  hint: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/css/

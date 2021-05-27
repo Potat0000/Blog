@@ -14,8 +14,8 @@ url: 'https://potat0.cc/'
 jsdelivr_cdn:
   use_cdn: true
   deploy_when_generating: true
-  cdn_url_prefix: 'https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/'
-  git_repo_url: 'https://github.com/gyj1109/Blog-Resources.git'
+  cdn_url_prefix: 'https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/'
+  git_repo_url: 'https://github.com/Potat0000/Blog-Resources.git'
   token: '$UPLOAD_TOKEN'
   asset_dirs:
     - source/img

@@ -7,7 +7,7 @@
   "license": "EPL-1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gyj1109/Blog.git"
+    "url": "git+https://github.com/Potat0000/Blog.git"
   },
   "dependencies": {
     "hexo": "^5.4.0",

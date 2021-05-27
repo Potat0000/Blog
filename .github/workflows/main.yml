@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@main
     - name: Fetch Posts
       run: |
-        git clone https://${{secrets.UPLOAD_TOKEN}}@github.com/gyj1109/Blog-Posts.git source/_posts
+        git clone https://${{secrets.UPLOAD_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
         rm -rf source/_posts/.git*
     - name: Install NPM packages
       run: |
@@ -46,4 +46,4 @@ jobs:
         git init
         git add .
         git commit -m "GitHub Pages"
-        git push --force "https://${{secrets.UPLOAD_TOKEN}}@github.com/gyj1109/Blog.git" master:gh-pages
+        git push --force "https://${{secrets.UPLOAD_TOKEN}}@github.com/Potat0000/Blog.git" master:gh-pages
