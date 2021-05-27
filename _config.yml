@@ -69,5 +69,5 @@ sitemap:
   path: sitemap.xml
   rel: true
   tags: true
-  categories: true
+  categories: false
   template: ./sitemap_template.xml
