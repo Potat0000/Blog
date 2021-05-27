@@ -1,0 +1,49 @@
+name: Auto build blog
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@main
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+    - name: Set up Node.js
+      uses: actions/setup-node@main
+      with:
+        node-version: '14.x'
+    - name: Check out code
+      uses: actions/checkout@main
+    - name: Fetch Posts
+      run: |
+        git clone https://${{secrets.UPLOAD_TOKEN}}@github.com/gyj1109/Blog-Posts.git source/_posts
+        rm -rf source/_posts/.git*
+    - name: Install NPM packages
+      run: |
+        npm install -g hexo-cli
+        npm install
+    - name: Config Git
+      run: |
+        git config --global user.name "Actions"
+        git config --global user.email "actions@github.com"
+    - name: Build
+      env:
+        UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+      run: |
+        hexo g
+    - name: Remove useless Resources
+      run: |
+        python3 del.py
+    - name: Push to Github
+      run: |
+        cd ./public
+        git init
+        git add .
+        git commit -m "GitHub Pages"
+        git push --force "https://${{secrets.UPLOAD_TOKEN}}@github.com/gyj1109/Blog.git" master:gh-pages

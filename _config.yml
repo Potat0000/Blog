@@ -1,0 +1,73 @@
+theme: fluid
+language: zh-CN
+
+title: 'Potat0 Box'
+subtitle: 世界那么大 我想去看看
+author: Potat0
+SEOTitle: 'Potat0 Box'
+email: i@potat0.cc
+new_post_name: :year-:month-:day-:title.md
+permalink: posts/:year:month:day/:title/
+post_asset_folder: true
+url: 'https://potat0.cc/'
+
+jsdelivr_cdn:
+  use_cdn: true
+  deploy_when_generating: true
+  cdn_url_prefix: 'https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/'
+  git_repo_url: 'https://github.com/gyj1109/Blog-Resources.git'
+  token: '$UPLOAD_TOKEN'
+  asset_dirs:
+    - source/img
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-cjk-breaks
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+
+js_concator:
+  enable: true
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+css_minifier:
+  enable: true
+  silent: false
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: true
+  interlaced: true
+  multipass: true
+  optimizationLevel: 2
+  pngquant: true
+  progressive: true
+  silent: false
+
+sitemap:
+  path: sitemap.xml
+  rel: true
+  tags: true
+  categories: true
+  template: ./sitemap_template.xml

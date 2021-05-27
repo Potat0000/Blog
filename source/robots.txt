@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /achives/
+Allow: /categories/
+Allow: /posts/
+Allow: /tags/
+
+Disallow: /links/
+Disallow: /local-search.xml
+
+Sitemap: https://potat0.cc/sitemap.xml
