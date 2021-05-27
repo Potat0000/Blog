@@ -629,7 +629,7 @@ post:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo
-    type: disqus
+    type: utterances
 
 
 #---------------------------
@@ -645,7 +645,7 @@ post:
 # Based on GitHub Issues
 # See: https://utteranc.es
 utterances:
-  repo:
+  repo: gyj1109/Blog-Comment
   issue_term: pathname
   label: utterances
   theme: github-light
@@ -1040,7 +1040,7 @@ links:
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
-    enable: true
+    enable: false
     content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/gyj1109/Blog-Resources/img/favicon.png</li></ul>'
 
   # 评论插件
@@ -1050,7 +1050,7 @@ links:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo
-    type: disqus
+    type: utterances
 
 
 #---------------------------
