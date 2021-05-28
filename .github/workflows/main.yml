@@ -37,9 +37,8 @@ jobs:
         UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
       run: |
         hexo g
-    - name: Remove useless Resources
-      run: |
         python3 del.py
+        sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
     - name: Push to Github
       run: |
         cd ./public
