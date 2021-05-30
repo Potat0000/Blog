@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
+favicon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
+apple_touch_icon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -201,7 +201,7 @@ custom_css:
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
-custom_head: '<meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><script>IEJUMPIEJUMPIEJUMP</script>'
+custom_head: '<meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="google" content="notranslate"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta name="screen-orientation" content="landscape"><meta name="x5-orientation" content="landscape"><meta name="layoutmode" content="standard"><meta name="imagemode" content="force"><meta name="wap-font-scale" content="no"><meta http-equiv="cleartype" content="on"><meta name="msapplication-tap-highlight" content="no"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="194x194" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-194x194.png"><link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/manifest.json"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/safari-pinned-tab.svg" color="#2f4154"><meta name="apple-mobile-web-app-title" content="Potat0 Box"><meta name="application-name" content="Potat0 Box"><meta name="msapplication-TileColor" content="#2f4154"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/mstile-144x144.png"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/browserconfig.xml"><script>IEJUMPIEJUMPIEJUMP</script>'
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
@@ -1035,13 +1035,13 @@ links:
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
-  onerror_avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png
+  onerror_avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
 
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
     enable: false
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/favicon.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/avatar.webp</li></ul>'
 
   # 评论插件
   # Comment plugin
