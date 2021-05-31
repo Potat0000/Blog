@@ -1,6 +1,7 @@
 {
     "name": "Potat0 Box",
     "short_name": "Potat0 Box",
+    "description": "Just a box for Potat0.",
     "icons": [
         {
             "src": "https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/android-chrome-36x36.png",
@@ -48,15 +49,37 @@
             "type": "image/png"
         },
         {
-            "src": "https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/apple-touch-icon.png",
-            "sizes": "180x180",
+            "src": "https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/maskable.png",
+            "sizes": "196x196",
             "type": "image/png",
             "purpose": "maskable any"
         }
     ],
     "theme_color": "#2f4154",
     "background_color": "#2f4154",
+    "url": "https://potat0.cc/",
     "start_url": "https://potat0.cc/",
     "display": "standalone",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "shortcuts": [
+        {
+            "name": "Home",
+            "short_name": "Home",
+            "description": "Back to homepage",
+            "url": "https://potat0.cc/",
+            "icons": [
+                {
+                    "src": "https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/android-chrome-192x192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "webapp",
+            "url": "https://potat0.cc/manifest.json"
+        }
+    ],
+    "prefer_related_applications": false
 }

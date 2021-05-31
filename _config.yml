@@ -2,7 +2,8 @@ theme: fluid
 language: zh-CN
 
 title: 'Potat0 Box'
-subtitle: 世界那么大 我想去看看
+subtitle: '世界那么大 我想去看看'
+description: 'Just a box for Potat0.'
 author: Potat0
 SEOTitle: 'Potat0 Box'
 email: i@potat0.cc
