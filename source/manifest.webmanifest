@@ -78,7 +78,7 @@
     "related_applications": [
         {
             "platform": "webapp",
-            "url": "https://potat0.cc/manifest.json"
+            "url": "https://potat0.cc/manifest.webmanifest"
         }
     ],
     "prefer_related_applications": false
