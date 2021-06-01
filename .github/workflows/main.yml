@@ -28,6 +28,13 @@ jobs:
       run: |
         npm install -g hexo-cli
         npm install
+    - name: Patch Theme
+      run: |
+        sed -i 's`maximum-scale=1.0, user-scalable=no`maximum-scale=5.0`g' `find . -name "head.ejs"`
+        sed -i 's`data-target="#modalSearch"`data-target="#modalSearch" aria-label="Search"`g' `find . -name "nav.ejs"`
+        sed -i 's`<a class="nav-link" target="_self">`<a class="nav-link" target="_self" aria-label="Color Toggle">`g' `find . -name "nav.ejs"`
+        sed -i 's`target="_self"`target="_self" href="#"`g' `find . -name "nav.ejs"`
+        sed -i 's`id="scroll-top-button"`id="scroll-top-button" aria-label="TOP"`g' `find . -name "layout.ejs"`
     - name: Config Git
       run: |
         git config --global user.name "Actions"
