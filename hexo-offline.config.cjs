@@ -10,12 +10,12 @@ module.exports = {
             handler: "CacheFirst"
         },
         {
-            urlPattern: /^https:\/\/busuanzi\.ibruce\.info\/.*/,
-            handler: "NetworkOnly"
+            urlPattern: /^https:\/\/utteranc\.es\/.*/,
+            handler: "CacheFirst"
         },
         {
             urlPattern: /^https:\/\/www\.google-analytics\.com\/.*/,
-            handler: "NetworkOnly"
+            handler: "NetworkFirst"
         }
     ]
 }
