@@ -12,7 +12,7 @@
   "dependencies": {
     "hexo": "^5.4.0",
     "hexo-all-minifier": "^0.5.7",
-    "hexo-cdn-jsdelivr": "^0.0.9",
+    "hexo-deployer-ali-oss": "^1.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index-pin-top": "^0.2.2",

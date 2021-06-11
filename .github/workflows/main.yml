@@ -9,11 +9,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@main
-      with:
-        python-version: '3.x'
-        architecture: 'x64'
     - name: Set up Node.js
       uses: actions/setup-node@main
       with:
@@ -28,7 +23,7 @@ jobs:
       run: |
         npm install -g hexo-cli
         npm install
-    - name: Patch Theme
+    - name: Patch
       run: |
         sed -i 's`maximum-scale=1.0, user-scalable=no`maximum-scale=5.0`g' `find . -name "head.ejs"`
         sed -i 's`data-target="#modalSearch"`data-target="#modalSearch" aria-label="Search"`g' `find . -name "nav.ejs"`
@@ -44,12 +39,13 @@ jobs:
         UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
       run: |
         hexo g
-        python3 del.py
         sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
-    - name: Push to Github
+    - name: Clean up
       run: |
-        cd ./public
-        git init
-        git add .
-        git commit -m "GitHub Pages"
-        git push --force "https://${{secrets.UPLOAD_TOKEN}}@github.com/Potat0000/Blog.git" master:gh-pages
+        cd public
+        rm -rf lib xml
+        rm img/avatar.png img/default.png img/favicon.png
+    - name: Deploy to Aliyun OSS
+      run: |
+        sed -i 's`OSSTOKENOSSTOKENOSSTOKEN`${{secrets.OSS_TOKEN}}`g' _config.yml
+        hexo d

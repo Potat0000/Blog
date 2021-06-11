@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
+favicon: /img/icon/favicon-194x194.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
+apple_touch_icon: /img/icon/favicon-194x194.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -67,7 +67,7 @@ code:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
       # Select the style button on the right side of the link page, you can also set the CSS link
       # See: https://prismjs.com/
-      style: "https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/prism-material-light.min.css"
+      style: "/css/prism-material-light.min.css"
 
       # 设为 true 高亮将本地静态生成（并只支持部分 prismjs 插件），设为 false 高亮将在浏览器通过 js 生成
       # If true, it will be generated locally (but some prismjs plugins are not supported). If false, it will be generated via JS in the browser
@@ -197,11 +197,11 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@4.3.0/index.min.css
+  - /fonts/roboto-mono/index.min.css
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
-custom_head: '<meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="google" content="notranslate"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta name="screen-orientation" content="landscape"><meta name="x5-orientation" content="landscape"><meta name="layoutmode" content="standard"><meta name="imagemode" content="force"><meta name="wap-font-scale" content="no"><meta http-equiv="cleartype" content="on"><meta name="msapplication-tap-highlight" content="no"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="194x194" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-194x194.png"><link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/favicon-16x16.png"><link rel="manifest" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog@gh-pages/manifest.webmanifest"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/maskable.png" color="#2f4154"><meta name="apple-mobile-web-app-title" content="Potat0 Box"><meta name="application-name" content="Potat0 Box"><meta name="msapplication-TileColor" content="#2f4154"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/mstile-144x144.png"><meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources@latest/img/icon/browserconfig.xml"><script>IEJUMPIEJUMPIEJUMP</script>'
+custom_head: '<link rel="canonical" href="https://potat0.cc/"/><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="google" content="notranslate"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta name="screen-orientation" content="landscape"><meta name="x5-orientation" content="landscape"><meta name="layoutmode" content="standard"><meta name="imagemode" content="force"><meta name="wap-font-scale" content="no"><meta http-equiv="cleartype" content="on"><meta name="msapplication-tap-highlight" content="no"><link rel="icon" type="image/png" sizes="32x32" href="/img/icon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="194x194" href="/img/icon/favicon-194x194.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/icon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="16x16" href="/img/icon/favicon-16x16.png"><link rel="manifest" href="/manifest.webmanifest"><link rel="mask-icon" href="/img/icon/maskable.png" color="#2f4154"><meta name="apple-mobile-web-app-title" content="Potat0 Box"><meta name="application-name" content="Potat0 Box"><meta name="msapplication-TileColor" content="#2f4154"><meta name="msapplication-TileImage" content="/img/icon/mstile-144x144.png"><meta name="msapplication-config" content="/img/icon/browserconfig.xml"><script>IEJUMPIEJUMPIEJUMP</script>'
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
@@ -260,7 +260,7 @@ lazyload:
 
   # 加载时的占位图片
   # The placeholder image when loading
-  loading_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/loading.gif
+  loading_img: /img/loading.gif
 
   # 开启后懒加载仅在文章页生效，如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
   # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
@@ -395,13 +395,13 @@ footer:
   # 国内大陆服务器的备案信息
   # For Chinese mainland website policy, other areas keep disable
   beian:
-    enable: false
+    enable: true
     # ICP证号
-    icp_text: 京ICP证123456号
+    icp_text: 浙ICP备2021017952号
     # 公安备案号，不填则只显示ICP
-    police_text: 京公网安备12345678号
+    police_text:
     # 公安备案的编号，用于URL跳转查询
-    police_code: 12345678
+    police_code:
     # 公安备案的图片. 为空时不显示备案图片
     police_icon: /img/police_beian.png
 
@@ -413,7 +413,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -485,7 +485,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -762,7 +762,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -774,7 +774,7 @@ archive:
 #---------------------------
 category:
   enable: false
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -804,7 +804,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -822,11 +822,11 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
-  avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/avatar.webp
+  avatar: /img/avatar.webp
   name: "Potat0"
   intro: "Vidar Team | Reverse | Misc"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -844,7 +844,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -855,7 +855,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/404-bg.webp
+  banner_img: /img/404-bg.webp
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
@@ -867,11 +867,12 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/background.webp
+  banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
   # 友链的成员项
+  # 使用 `https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin={QQ Number}` 获得 QQ 头像接口
   # Member item of page
   # Use `https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin={QQ Number}` to get QQ Avatar
   items:
@@ -1035,13 +1036,13 @@ links:
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
-  onerror_avatar: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/icon/favicon-194x194.png
+  onerror_avatar: /img/icon/favicon-194x194.png
 
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
     enable: false
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/avatar.webp</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：/img/avatar.webp</li></ul>'
 
   # 评论插件
   # Comment plugin
@@ -1064,30 +1065,29 @@ links:
 #---------------------------
 
 static_prefix:
-  # 内部静态
-  # Internal static
-  internal_js: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/js/
-  internal_css: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/css/
-  internal_img: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/img/
+  internal_js: /js/
+  internal_css: /css/
+  internal_img: /img/
 
-  anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/
-  github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/
-  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/
-  highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/
-  prismjs: https://cdn.jsdelivr.net/npm/prismjs@1.23.0/
-  tocbot: https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/
-  typed: https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
-  nprogress: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/
-  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/
-  katex: https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/
+  github_markdown: /css/
+  hint: /css/
+  katex: /css/
+  anchor: /js/
+  clipboard: /js/
+  jquery: /js/
+  mermaid: /js/
+  tocbot: /js/
+  typed: /js/
+  bootstrap: /thirdpart/bootstrap/
+  fancybox: /thirdpart/fancybox/
+  nprogress: /thirdpart/nprogress/
+  prismjs: /thirdpart/prismjs/
+
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/
-  mermaid: https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/
-  valine: https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
-  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/
-  gitalk: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/
+  highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/
-  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.3.0/dist/
-  hint: https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/css/
+  gitalk: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/
+  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/
+  valine: https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
+  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.16.2/dist/

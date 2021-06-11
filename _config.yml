@@ -12,14 +12,12 @@ permalink: posts/:year:month:day/:title/
 post_asset_folder: true
 url: 'https://potat0.cc/'
 
-jsdelivr_cdn:
-  use_cdn: true
-  deploy_when_generating: true
-  cdn_url_prefix: 'https://cdn.jsdelivr.net/gh/Potat0000/Blog-Resources/'
-  git_repo_url: 'https://github.com/Potat0000/Blog-Resources.git'
-  token: '$UPLOAD_TOKEN'
-  asset_dirs:
-    - source/img
+deploy:
+  type: ali-oss
+  region: oss-cn-hangzhou
+  accessKeyId: LTAI5tJRuAe3y5cTSRP3B4u6
+  accessKeySecret: OSSTOKENOSSTOKENOSSTOKEN
+  bucket: potat0-box
 
 markdown:
   render:
@@ -37,11 +35,6 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
 
-js_concator:
-  enable: true
-  bundle_path: '/js/bundle.js'
-  front: false
-  silent: false
 html_minifier:
   enable: true
   ignore_error: false
