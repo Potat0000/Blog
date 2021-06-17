@@ -64,4 +64,3 @@ sitemap:
   rel: true
   tags: true
   categories: false
-  template: ./sitemap_template.xml
