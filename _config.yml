@@ -6,7 +6,7 @@ subtitle: '世界那么大 我想去看看'
 description: 'Just a box for Potat0.'
 author: Potat0
 SEOTitle: 'Potat0 Box'
-email: i@potat0.cc
+default_layout: post
 new_post_name: :year-:month-:day-:title.md
 permalink: posts/:year:month:day/:title/
 post_asset_folder: true
