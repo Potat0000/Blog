@@ -1079,10 +1079,10 @@ static_prefix:
   tocbot: /js/
   typed: /js/
   bootstrap: /thirdpart/bootstrap/
-  fancybox: /thirdpart/fancybox/
   nprogress: /thirdpart/nprogress/
   prismjs: /thirdpart/prismjs/
 
+  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
   highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/
   mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/
