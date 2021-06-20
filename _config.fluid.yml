@@ -67,7 +67,7 @@ code:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
       # Select the style button on the right side of the link page, you can also set the CSS link
       # See: https://prismjs.com/
-      style: "/css/prism-material-light.min.css"
+      style: "material_light"
 
       # 设为 true 高亮将本地静态生成（并只支持部分 prismjs 插件），设为 false 高亮将在浏览器通过 js 生成
       # If true, it will be generated locally (but some prismjs plugins are not supported). If false, it will be generated via JS in the browser
@@ -1069,18 +1069,18 @@ static_prefix:
   internal_css: /css/
   internal_img: /img/
 
-  github_markdown: /css/
-  hint: /css/
-  katex: /css/
-  anchor: /js/
-  clipboard: /js/
-  jquery: /js/
-  mermaid: /js/
-  tocbot: /js/
-  typed: /js/
-  bootstrap: /thirdpart/bootstrap/
-  nprogress: /thirdpart/nprogress/
-  prismjs: /thirdpart/prismjs/
+  anchor: /lib/anchor-js/
+  bootstrap: /lib/bootstrap/
+  clipboard: /lib/clipboard/
+  github_markdown: /lib/github-markdown-css/
+  hint: /lib/hint/
+  jquery: /lib/jquery/
+  katex: /lib/katex/
+  mermaid: /lib/mermaid/
+  nprogress: /lib/nprogress/
+  prismjs: /lib/prismjs/
+  tocbot: /lib/tocbot/
+  typed: /lib/typed.js/
 
   fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/

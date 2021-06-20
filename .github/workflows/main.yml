@@ -43,7 +43,7 @@ jobs:
     - name: Clean up
       run: |
         cd public
-        rm -rf lib xml
+        rm -rf xml
         rm img/avatar.png img/default.png img/favicon.png
     - name: Deploy to Aliyun OSS
       run: |
