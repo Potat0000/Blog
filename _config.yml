@@ -30,10 +30,15 @@ markdown:
   plugins:
     - markdown-it-abbr
     - markdown-it-cjk-breaks
+    - markdown-it-container
+    - markdown-it-emoji
     - markdown-it-footnote
     - markdown-it-ins
+    - markdown-it-mark
     - markdown-it-sub
     - markdown-it-sup
+    - markdown-it-table-of-contents
+    - markdown-it-task-lists
 
 html_minifier:
   enable: true
