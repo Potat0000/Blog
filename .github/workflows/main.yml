@@ -32,10 +32,6 @@ jobs:
         sed -i 's`<a class="nav-link" target="_self">`<a class="nav-link" target="_self" aria-label="Color Toggle">`g' `find . -name "nav.ejs"`
         sed -i 's`target="_self"`target="_self" href="javascript:;"`g' `find . -name "nav.ejs"`
         sed -i 's`id="scroll-top-button"`id="scroll-top-button" aria-label="TOP"`g' `find . -name "layout.ejs"`
-    - name: Config Git
-      run: |
-        git config --global user.name "Actions"
-        git config --global user.email "actions@github.com"
     - name: Build
       env:
         UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
