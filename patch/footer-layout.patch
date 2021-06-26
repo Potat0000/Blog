@@ -1,0 +1,48 @@
+diff --color -ur hexo-theme-fluid/layout/_partial/statistics.ejs hexo-theme-fluid-new/layout/_partial/statistics.ejs
+--- hexo-theme-fluid/layout/_partial/statistics.ejs	2021-05-23 19:13:20.000000000 +0800
++++ hexo-theme-fluid-new/layout/_partial/statistics.ejs	2021-06-26 20:53:54.386626900 +0800
+@@ -6,17 +6,17 @@
+     <% if (theme.footer.statistics.source === 'leancloud') { %>
+       <% if (theme.footer.statistics.pv_format) { %>
+         <!-- LeanCloud 统计PV -->
+-        <span id="leancloud-site-pv-container" style="display: none">
++        <span id="leancloud-site-pv-container">
+             <%- pv_texts[0] %>
+-            <span id="leancloud-site-pv"></span>
++            <span id="leancloud-site-pv">-</span>
+             <%- pv_texts[1] %>
+           </span>
+       <% } %>
+       <% if (theme.footer.statistics.uv_format) { %>
+         <!-- LeanCloud 统计UV -->
+-        <span id="leancloud-site-uv-container" style="display: none">
++        <span id="leancloud-site-uv-container">
+             <%- uv_texts[0] %>
+-            <span id="leancloud-site-uv"></span>
++            <span id="leancloud-site-uv">-</span>
+             <%- uv_texts[1] %>
+           </span>
+       <% } %>
+diff --color -ur hexo-theme-fluid/source/js/leancloud.js hexo-theme-fluid-new/source/js/leancloud.js
+--- hexo-theme-fluid/source/js/leancloud.js	2021-05-23 19:13:20.000000000 +0800
++++ hexo-theme-fluid-new/source/js/leancloud.js	2021-06-26 20:54:20.474865800 +0800
+@@ -95,9 +95,6 @@
+         var ele = document.querySelector('#leancloud-site-pv');
+         if (ele) {
+           ele.innerText = record.time + 1;
+-          if (pvCtn) {
+-            pvCtn.style.display = 'inline';
+-          }
+         }
+       });
+       getterArr.push(pvGetter);
+@@ -112,9 +109,6 @@
+         var ele = document.querySelector('#leancloud-site-uv');
+         if (ele) {
+           ele.innerText = record.time + (vuv ? 1 : 0);
+-          if (uvCtn) {
+-            uvCtn.style.display = 'inline';
+-          }
+         }
+       });
+       getterArr.push(uvGetter);
