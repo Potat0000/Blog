@@ -397,7 +397,7 @@ footer:
   beian:
     enable: true
     # ICP证号
-    icp_text: 浙ICP备2021017952号
+    icp_text: 浙ICP备2021017952号-1
     # 公安备案号，不填则只显示ICP
     police_text: "浙公网安备 33010602011812号"
     # 公安备案的编号，用于URL跳转查询
