@@ -1032,6 +1032,12 @@ links:
       link: "https://esonhugh.me/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=UweyTR1uamUaHhichp7APIw&s=640"
     }
+    - {
+      title: "Jacen",
+      intro: "Jacen's learing journey",
+      link: "https://www.waysoahc.xyz/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zxHwoVib2p8CuPHEjRMDsUA&s=640"
+    }
 
 
   # 当成员头像加载失败时，替换为指定图片
