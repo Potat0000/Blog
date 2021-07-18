@@ -28,9 +28,11 @@ jobs:
         find ./source/lib/ -type f -exec sed -i '1i\{% raw %}' {} \;
         find ./source/lib/ -type f -exec sed -i '$a\{% endraw %}' {} \;
         cd ./node_modules/hexo-theme-fluid/
-        patch -p1 < ../../patch/footer-layout.patch
+        patch -p1 < ../../patch/FooterLayout.patch
         cd layout
-        patch -p1 < ../../../patch/accessibility.patch
+        patch -p1 < ../../../patch/Accessibility.patch
+        cd _partial
+        patch head.ejs < ../../../../patch/OpenGraph.patch
     - name: Build
       env:
         UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
