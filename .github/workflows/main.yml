@@ -13,16 +13,20 @@ jobs:
       uses: actions/setup-node@main
       with:
         node-version: '14.x'
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
     - name: Check out code
       uses: actions/checkout@main
     - name: Fetch Posts
       run: |
         git clone https://${{secrets.UPLOAD_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
         rm -rf source/_posts/.git*
-    - name: Install NPM packages
+    - name: Install packages
       run: |
         npm install -g hexo-cli
         npm install
+        pip3 install aliyun-python-sdk-cdn aliyun-python-sdk-core
     - name: Patch
       run: |
         find ./source/lib/ -type f -exec sed -i '1i\{% raw %}' {} \;
@@ -34,8 +38,6 @@ jobs:
         cd _partial
         patch head.ejs < ../../../../patch/OpenGraph.patch
     - name: Build
-      env:
-        UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
       run: |
         hexo g
         sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
@@ -46,5 +48,14 @@ jobs:
         rm img/avatar.png img/default.png img/favicon.png
     - name: Deploy to Aliyun OSS
       run: |
-        sed -i 's`OSSTOKENOSSTOKENOSSTOKEN`${{secrets.OSS_TOKEN}}`g' _config.yml
+        sed -i 's`ALIYUNTOKENALIYUNTOKENALIYUNTOKEN`${{secrets.ALIYUN_TOKEN}}`g' _config.yml
         hexo d
+    - name: Refresh CDN
+      run: |
+        echo "https://potat0.cc/" > refresh.txt
+        python3 Refresh.py -i LTAI5tE4rd3W2XoeZU4ndCdE -k ${{secrets.ALIYUN_TOKEN}} -r refresh.txt -t clear -o Directory
+        echo -ne "https://potat0.cc/index.html\nhttps://potat0.cc/css/main.css\nhttps://potat0.cc/service-worker.js\nhttps://potat0.cc/service-worker.js.map\nhttps://potat0.cc/" > refresh.txt
+        ls public/workbox-*.js | cut -d "/" -f 2 >> refresh.txt
+        echo -n "https://potat0.cc/" >> refresh.txt
+        ls public/workbox-*.js.map | cut -d "/" -f 2 >> refresh.txt
+        python3 Refresh.py -i LTAI5tE4rd3W2XoeZU4ndCdE -k ${{secrets.ALIYUN_TOKEN}} -r refresh.txt -t push

@@ -15,8 +15,8 @@ url: 'https://potat0.cc/'
 deploy:
   type: ali-oss
   region: oss-cn-hangzhou
-  accessKeyId: LTAI5tJRuAe3y5cTSRP3B4u6
-  accessKeySecret: OSSTOKENOSSTOKENOSSTOKEN
+  accessKeyId: LTAI5tE4rd3W2XoeZU4ndCdE
+  accessKeySecret: ALIYUNTOKENALIYUNTOKENALIYUNTOKEN
   bucket: potat0-box
 
 markdown:
