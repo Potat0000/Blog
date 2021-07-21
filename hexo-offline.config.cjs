@@ -1,6 +1,6 @@
 module.exports = {
-    globPatterns: ["**/*.{html,js,css,webp,png,jpg,gif,svg,eot,ttf,woff,woff2}"],
-    globIgnores: ["img/avatar.png", "img/default.png", "img/favicon.png", "lib/hint/hint.min.css"],
+    globPatterns: ["**/*.{js,css,webp,png,jpg,gif,svg,eot,ttf,woff,woff2}"],
+    globIgnores: ["img/avatar.png", "img/default.png", "img/favicon.png"],
     globDirectory: "./public",
     runtimeCaching: [
         {
@@ -10,10 +10,6 @@ module.exports = {
         {
             urlPattern: /^https:\/\/www\.google-analytics\.com\/.*/,
             handler: "NetworkFirst"
-        },
-        {
-            urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/.*/,
-            handler: "CacheFirst"
         },
         {
             urlPattern: /^https:\/\/utteranc\.es\/.*/,
