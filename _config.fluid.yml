@@ -875,7 +875,7 @@ links:
   # 友链的成员项
   # 使用 `https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin={QQ Number}` 获得 QQ 头像接口
   # Member item of page
-  # Use `https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin={QQ Number}` to get QQ Avatar
+  # Use the link above to get QQ Avatar
   items:
     - {
       title: "Li4n0",
@@ -1008,6 +1008,12 @@ links:
       intro: "0wl's Blog",
       link: "https://0wl-alt.github.io/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=06FRYslcuprt59OxibicdhqQ&s=640"
+    }
+    - {
+      title: "4nsw3r",
+      intro: "4nsw3r's Blog",
+      link: "https://4nsw3r.top/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=j3LOiav9IluKSYg1VEibblZw&s=640"
     }
     - {
       title: "Klrin",
