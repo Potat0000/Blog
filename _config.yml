@@ -35,6 +35,7 @@ markdown:
     - markdown-it-footnote
     - markdown-it-ins
     - markdown-it-mark
+    - markdown-it-pangu
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-table-of-contents
