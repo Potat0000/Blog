@@ -30,6 +30,7 @@ jobs:
         pip3 install aliyun-python-sdk-cdn aliyun-python-sdk-core
     - name: Patch
       run: |
+        cp source/img/icon/favicon.ico source/
         find ./source/lib/ -type f -exec sed -i '1i\{% raw %}' {} \;
         find ./source/lib/ -type f -exec sed -i '$a\{% endraw %}' {} \;
         cd ./node_modules/hexo-theme-fluid/
