@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@main
     - name: Fetch Posts
       run: |
-        git clone https://${{secrets.UPLOAD_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
+        git clone https://${{secrets.GIT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
         rm -rf source/_posts/.git*
     - name: Install packages
       run: |
@@ -48,14 +48,15 @@ jobs:
         rm img/avatar.png img/default.png img/favicon.png
     - name: Deploy to Aliyun OSS
       run: |
-        sed -i 's`ALIYUNTOKENALIYUNTOKENALIYUNTOKEN`${{secrets.ALIYUN_TOKEN}}`g' _config.yml
+        sed -i 's`ALIYUN_ACCESSKEY_ID`${{secrets.ALIYUN_ACCESSKEY_ID}}`g' _config.yml
+        sed -i 's`ALIYUN_ACCESSKEY_SECRET`${{secrets.ALIYUN_ACCESSKEY_SECRET}}`g' _config.yml
         hexo d
     - name: Refresh CDN
       run: |
         echo "https://potat0.cc/" > refresh.txt
-        python3 Refresh.py -i LTAI5tE4rd3W2XoeZU4ndCdE -k ${{secrets.ALIYUN_TOKEN}} -r refresh.txt -t clear -o Directory
+        python3 Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t clear -o Directory
         echo -ne "https://potat0.cc/index.html\nhttps://potat0.cc/css/main.css\nhttps://potat0.cc/service-worker.js\nhttps://potat0.cc/service-worker.js.map\nhttps://potat0.cc/" > refresh.txt
         ls public/workbox-*.js | cut -d "/" -f 2 >> refresh.txt
         echo -n "https://potat0.cc/" >> refresh.txt
         ls public/workbox-*.js.map | cut -d "/" -f 2 >> refresh.txt
-        python3 Refresh.py -i LTAI5tE4rd3W2XoeZU4ndCdE -k ${{secrets.ALIYUN_TOKEN}} -r refresh.txt -t push
+        python3 Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t push
