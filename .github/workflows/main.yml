@@ -57,8 +57,9 @@ jobs:
       run: |
         echo "https://potat0.cc/" > refresh.txt
         python3 build_script/Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t clear -o Directory
-        echo -ne "https://potat0.cc/index.html\nhttps://potat0.cc/css/main.css\nhttps://potat0.cc/service-worker.js\nhttps://potat0.cc/service-worker.js.map\nhttps://potat0.cc/" > refresh.txt
+        echo -ne "https://potat0.cc/index.html\nhttps://potat0.cc/atom.xml\nhttps://potat0.cc/css/main.css\nhttps://potat0.cc/service-worker.js\nhttps://potat0.cc/service-worker.js.map\nhttps://potat0.cc/" > refresh.txt
         ls public/workbox-*.js | cut -d "/" -f 2 >> refresh.txt
         echo -n "https://potat0.cc/" >> refresh.txt
         ls public/workbox-*.js.map | cut -d "/" -f 2 >> refresh.txt
         python3 build_script/Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t push
+        curl -H "Content-Type: application/x-www-form-urlencoded" -X POST "https://pubsubhubbub.appspot.com/publish?hub.mode=publish&hub.url=https://potat0.cc/atom.xml"

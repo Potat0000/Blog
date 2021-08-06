@@ -74,3 +74,14 @@ sitemap:
 nofollow:
   enable: true
   field: site
+
+feed:
+  enable: true
+  type: atom
+  autodiscovery: true
+  content: true
+  hub: https://pubsubhubbub.appspot.com
+  icon: /favicon.ico
+  limit: 20
+  order_by: -date
+  template: ./atom_template.xml
