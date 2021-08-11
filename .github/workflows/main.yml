@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@main
     - name: Fetch Posts
       run: |
-        git clone https://${{secrets.GIT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
+        git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
         python3 build_script/gen_updatedtime.py
         rm -rf source/_posts/.git*
     - name: Install packages
