@@ -541,7 +541,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: true
+    enable: false
 
     # 描述文字
     # Descriptive text before date
@@ -562,11 +562,15 @@ post:
     # Collapse depth. If 0, all headings collapsed. If greater than 0, it will be expanded by default if there are sub headings
     collapseDepth: 0
 
-  # 版权声明，会显示在每篇文章的结尾
-  # Copyright, will be displayed at the end of each post
+  # 版权声明，会显示在每篇文章的结尾，使用 updated 指明是否显示文章更新时间
+  # Copyright, will be displayed at the end of each post. Use updated to set whether update date is displayed
+  # 在 content 中填写下述选项可激活 CC 协议，输入其他文本则直接显示
+  # Fill in the following options in the content to activate the CC agreement, or enter other text to display directly
+  # CC 协议选项 Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
   copyright:
     enable: true
-    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！'
+    updated: true
+    content: 'BY-NC-SA'
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
