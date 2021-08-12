@@ -6,5 +6,6 @@ node_modules/
 public/
 .deploy*/
 .vscode/
-/package-lock.json
+package-lock.json
 /source/_posts
+/themes/fluid

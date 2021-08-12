@@ -18,8 +18,9 @@ jobs:
         python-version: '3.x'
     - name: Check out code
       uses: actions/checkout@main
-    - name: Fetch Posts
+    - name: Fetch Theme and Posts
       run: |
+        git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Theme.git themes/fluid
         git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
         python3 build_script/gen_updatedtime.py
         rm -rf source/_posts/.git*
@@ -33,12 +34,6 @@ jobs:
         cp source/img/icon/favicon.ico source/
         find ./source/lib/ -type f -exec sed -i '1i\{% raw %}' {} \;
         find ./source/lib/ -type f -exec sed -i '$a\{% endraw %}' {} \;
-        cd ./node_modules/hexo-theme-fluid/
-        patch -p1 < ../../patch/FooterLayout.patch
-        cd layout
-        patch -p1 < ../../../patch/Accessibility.patch
-        cd _partial
-        patch head.ejs < ../../../../patch/OpenGraph.patch
     - name: Build
       run: |
         hexo g
