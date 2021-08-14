@@ -193,7 +193,7 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  - /lib/nodarkreader/nodarkreader.min.js  # https://github.com/hadialqattan/no-darkreader/releases/tag/v1.0.0
+  - /lib/nodarkreader/nodarkreader.min.js
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -1086,15 +1086,15 @@ static_prefix:
   internal_css: /css/
   internal_img: /img/
 
-  anchor: /lib/anchor-js/                     # 4.3.1
-  bootstrap: /lib/bootstrap/                  # 4.6.0
-  clipboard: /lib/clipboard/                  # 2.0.8
-  fancybox: /lib/fancybox/                    # 3.5.7
-  github_markdown: /lib/github-markdown-css/  # 4.0.0
-  jquery: /lib/jquery/                        # 3.6.0
-  katex: /lib/katex/                          # 0.13.10
-  mermaid: /lib/mermaid/                      # 8.10.2
-  nprogress: /lib/nprogress/                  # 0.2.0
-  prismjs: /lib/prismjs/                      # 1.23.0
-  tocbot: /lib/tocbot/                        # 4.12.3
-  typed: /lib/typed.js/                       # 2.0.12
+  anchor: /lib/anchor-js/
+  bootstrap: /lib/bootstrap/
+  clipboard: /lib/clipboard/
+  fancybox: /lib/fancybox/
+  github_markdown: /lib/github-markdown-css/
+  jquery: /lib/jquery/
+  katex: /lib/katex/
+  mermaid: /lib/mermaid/
+  nprogress: /lib/nprogress/
+  prismjs: /lib/prismjs/
+  tocbot: /lib/tocbot/
+  typed: /lib/typed.js/

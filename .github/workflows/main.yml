@@ -29,11 +29,10 @@ jobs:
         npm install -g hexo-cli
         npm install
         pip3 install aliyun-python-sdk-cdn aliyun-python-sdk-core
-    - name: Patch
+    - name: Get and Patch Lib Files
       run: |
         cp source/img/icon/favicon.ico source/
-        find ./source/lib/ -type f -exec sed -i '1i\{% raw %}' {} \;
-        find ./source/lib/ -type f -exec sed -i '$a\{% endraw %}' {} \;
+        bash build_script/get_libs.sh
     - name: Build
       run: |
         hexo g
