@@ -1070,6 +1070,12 @@ links:
       link: "https://www.waysoahc.xyz/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zxHwoVib2p8CuPHEjRMDsUA&s=640"
     }
+    - {
+      title: "DOYER",
+      intro: "树屋",
+      link: "https://galaxy-r.github.io/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=h42NHF8icTKEN49lo6H07Ag&s=640"
+    }
 
 
   # 当成员头像加载失败时，替换为指定图片
