@@ -1116,6 +1116,7 @@ static_prefix:
   anchor: /lib/anchor-js/
   bootstrap: /lib/bootstrap/
   clipboard: /lib/clipboard/
+  echarts: /lib/echarts/
   fancybox: /lib/fancybox/
   github_markdown: /lib/github-markdown-css/
   jquery: /lib/jquery/
