@@ -261,6 +261,9 @@ web_analytics:  # 网页访问统计
     # 统计页面时获取路径的属性
     # Get the attribute of the page path during statistics
     path: window.location.href
+    # 开启后不统计本地路径( localhost 与 127.0.0.1 )
+    # If ture, ignore localhost & 127.0.0.1
+    ignore_local: false
 
 # 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
 # Lazy loading of images and comment plugin on the page
@@ -281,7 +284,7 @@ lazyload:
 
 # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
-iconfont: //at.alicdn.com/t/font_1736178_kmeydafke9r.css
+iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 
 
 #---------------------------
@@ -375,6 +378,7 @@ scroll_top_arrow:
 # Open Graph metadata
 # See: https://hexo.io/docs/helpers.html#open-graph
 open_graph:
+  enable: true
   twitter_card: summary_large_image
   twitter_id:
   twitter_site:
