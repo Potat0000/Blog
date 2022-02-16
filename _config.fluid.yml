@@ -1087,6 +1087,12 @@ links:
       link: "https://galaxy-r.github.io/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=h42NHF8icTKEN49lo6H07Ag&s=640"
     }
+    - {
+      title: "MiaoTony",
+      intro: "MiaoTony’s 小窝",
+      link: "https://miaotony.xyz/",
+      avatar: "https://cdn.jsdelivr.net/gh/miaotony/miaotony.github.io/medias/avatar.jpg"
+    }
 
 
   # 当成员头像加载失败时，替换为指定图片
