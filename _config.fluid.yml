@@ -1042,7 +1042,7 @@ links:
     - {
       title: "0wl",
       intro: "0wl's Blog",
-      link: "https://0wl-alt.github.io/",
+      link: "https://0wl.site/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=06FRYslcuprt59OxibicdhqQ&s=640"
     }
     - {
@@ -1092,6 +1092,42 @@ links:
       intro: "MiaoTony’s 小窝",
       link: "https://miaotony.xyz/",
       avatar: "https://cdn.jsdelivr.net/gh/miaotony/miaotony.github.io/medias/avatar.jpg"
+    }
+    - {
+      title: "白夜",
+      intro: "白夜的幻想乡缘起",
+      link: "https://www.hakuya.work/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=BmACniaibVb6IL6LiaYF4Uvlw&s=640"
+    }
+    - {
+      title: "ek1ng",
+      intro: "ek1ng's Blog",
+      link: "https://ek1ng.com/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=pJFuHEqNaFk1If1STvRibWw&s=640"
+    }
+    - {
+      title: "R1esbyfe",
+      intro: "R1esbyfe的小世界",
+      link: "https://r1esbyfe.top/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=FLyUHP6nYov19gA0ia83u8Q&s=640"
+    }
+    - {
+      title: "t0hka",
+      intro: "T0hka's blog",
+      link: "https://blog.t0hka.top/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=EYNwm1PQe8o5OcghFb4zfw&s=640"
+    }
+    - {
+      title: "yolande",
+      intro: "yolande",
+      link: "https://y01and3.github.io/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rY328VIqDc7lNtujYic8JxA&s=640"
+    }
+    - {
+      title: "taka",
+      intro: "Kabuto-taka",
+      link: "https://www.cnblogs.com/kabuto-taka/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=oPn2ez6Nq12GqPZG6cV7nw&s=640"
     }
 
 
