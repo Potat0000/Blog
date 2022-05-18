@@ -1,6 +1,6 @@
 module.exports = {
     globPatterns: ["**/*.{js,css,webp,png,jpg,gif,svg,eot,ttf,woff,woff2}"],
-    globIgnores: ["img/avatar.png", "img/default.png", "img/favicon.png"],
+    globIgnores: ["img/avatar.png", "img/default.png", "img/fluid.png"],
     globDirectory: "./public",
     runtimeCaching: [
         {
