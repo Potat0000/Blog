@@ -19,10 +19,10 @@ curl https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js --creat
 curl https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js --create-dirs -o prismjs/plugins/autoloader/prism-autoloader.min.js
 curl https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css --create-dirs -o prismjs/plugins/line-numbers/prism-line-numbers.min.css
 curl https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js --create-dirs -o prismjs/plugins/line-numbers/prism-line-numbers.min.js
+curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o prismjs/themes/prism-material-light.min.css
+curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o prismjs/themes/prism-material-oceanic.min.css
 curl https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js --create-dirs -o tocbot/tocbot.min.js
 curl https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js --create-dirs -o typed.js/typed.min.js
-mkdir prismjs/themes
-mv ../prism-material.min.css prismjs/themes
 find . -type f -exec sed -i '/sourceMappingURL/d' {} \;
 find . -type f -exec sed -i '1i\{% raw %}' {} \;
 find . -type f -exec sed -i '$a\{% endraw %}' {} \;

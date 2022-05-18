@@ -42,7 +42,7 @@ jobs:
       run: |
         cd public
         rm -rf xml
-        rm img/avatar.png img/default.png img/favicon.png
+        rm img/avatar.png img/default.png img/fluid.png
     - name: Deploy to Aliyun OSS
       run: |
         sed -i 's`ALIYUN_ACCESSKEY_ID`${{secrets.ALIYUN_ACCESSKEY_ID}}`g' _config.yml
