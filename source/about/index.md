@@ -6,10 +6,12 @@ layout: about
 
 我是 Potat0，就读于~~下沙小清华~~。
 
-Vidar-Team 20 级成员，主攻 Reverse 方向，Web 安全不太懂，顺带做一做 Misc。
+Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking，顺带做一做 Misc。
 
-平时爱好捣鼓一些小玩意儿 *（软路由、博客这类的）*。纯粹是喜欢倒腾。
+----------
 
-就这样吧，以后想到再写。
+欢迎在 DN42 与我 Peer！你可以访问 https://dn42.potat0.cc/ 获得相关信息。
 
-BTW, here is my GPG Key: `0x1153DB02`
+Always welcome to peer me in DN42. Please visit https://dn42.potat0.cc/ for more information.
+
+顺便，这是我的 GPG 指纹 BTW, here is my GPG Fingerprint: `0x1153DB02`

@@ -351,6 +351,7 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     # - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "DN42", link: "https://dn42.potat0.cc/", icon: "iconfont icon-mini-program-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
@@ -934,12 +935,13 @@ about:
   banner_mask_alpha: 0.3
   avatar: /img/avatar.webp
   name: "Potat0"
-  intro: "Vidar Team | Reverse | Misc"
+  intro: "Vidar Team | Computer Networking | Misc"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/Potat0000", tip: "GitHub" }
     - { class: "iconfont icon-mail", link: "mailto:i@potat0.cc", tip: "Email" }
+    - { class: "iconfont icon-mini-program-fill", link: "https://dn42.potat0.cc/", tip: "DN42" }
 
 
 #---------------------------
