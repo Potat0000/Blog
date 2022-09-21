@@ -14,4 +14,4 @@ Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking，
 
 Always welcome to peer me in DN42. Please visit https://dn42.potat0.cc/ for more information.
 
-顺便，这是我的 GPG 指纹 BTW, here is my GPG Fingerprint: `0x1153DB02`
+顺便，这是我的 GPG 指纹 BTW, here is my GPG Fingerprint: [`0xC0DE1816`](https://keys.openpgp.org/vks/v1/by-fingerprint/CA9E8A392634582FD69E113E21975858C0DE1816) (Code 1816)
