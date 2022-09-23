@@ -237,6 +237,7 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
+  - //at.alicdn.com/t/c/font_3541742_lis4p7dsfs.css
   - /fonts/roboto-mono/index.min.css
 
 # 网页访问统计
@@ -351,7 +352,7 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     # - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "DN42", link: "https://dn42.potat0.cc/", icon: "iconfont icon-mini-program-fill" }
+    - { key: "DN42", link: "https://dn42.potat0.cc/", icon: "iconfont icon-network" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
@@ -942,7 +943,7 @@ about:
     - { class: "iconfont icon-telegram-fill", link: "https://t.me/Potat0_PM_Bot", tip: "Telegram" }
     - { class: "iconfont icon-github-fill", link: "https://github.com/Potat0000", tip: "GitHub" }
     - { class: "iconfont icon-mail", link: "mailto:i@potat0.cc", tip: "Email" }
-    - { class: "iconfont icon-mini-program-fill", link: "https://dn42.potat0.cc/", tip: "DN42" }
+    - { class: "iconfont icon-network", link: "https://dn42.potat0.cc/", tip: "DN42" }
 
 
 #---------------------------
