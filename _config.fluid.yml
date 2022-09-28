@@ -1203,6 +1203,12 @@ links:
       link: "https://www.cnblogs.com/kabuto-taka/",
       avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=oPn2ez6Nq12GqPZG6cV7nw&s=640"
     }
+    - {
+      title: "psyq",
+      intro: "psyq的日常",
+      link: "http://blog.psyqlk.space/",
+      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=vFCLPytxmpqlzpxG55pdyw&s=640"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
