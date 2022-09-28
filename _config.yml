@@ -12,13 +12,6 @@ permalink: posts/:year:month:day/:title/
 post_asset_folder: true
 url: 'https://potat0.cc/'
 
-deploy:
-  type: ali-oss
-  region: oss-cn-hangzhou
-  accessKeyId: ALIYUN_ACCESSKEY_ID
-  accessKeySecret: ALIYUN_ACCESSKEY_SECRET
-  bucket: potat0-box
-
 markdown:
   render:
     html: true

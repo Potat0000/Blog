@@ -13,7 +13,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@main
       with:
-        node-version: '14.x'
+        node-version: '16.x'
     - uses: actions/setup-python@main
       with:
         python-version: '3.x'
@@ -28,7 +28,6 @@ jobs:
       run: |
         npm install -g hexo-cli
         npm install
-        pip3 install aliyun-python-sdk-cdn aliyun-python-sdk-core
     - name: Get and Patch Lib Files
       run: |
         cp source/img/icon/favicon.ico source/
@@ -44,17 +43,12 @@ jobs:
         rm -rf xml
         rm img/avatar.png img/default.png img/fluid.png
     - name: Deploy to Aliyun OSS
-      run: |
-        sed -i 's`ALIYUN_ACCESSKEY_ID`${{secrets.ALIYUN_ACCESSKEY_ID}}`g' _config.yml
-        sed -i 's`ALIYUN_ACCESSKEY_SECRET`${{secrets.ALIYUN_ACCESSKEY_SECRET}}`g' _config.yml
-        hexo d
-    - name: Refresh CDN
-      run: |
-        echo "https://potat0.cc/" > refresh.txt
-        python3 build_script/Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t clear -o Directory
-        echo -ne "https://potat0.cc/index.html\nhttps://potat0.cc/atom.xml\nhttps://potat0.cc/css/main.css\nhttps://potat0.cc/service-worker.js\nhttps://potat0.cc/service-worker.js.map\nhttps://potat0.cc/" > refresh.txt
-        ls public/workbox-*.js | cut -d "/" -f 2 >> refresh.txt
-        echo -n "https://potat0.cc/" >> refresh.txt
-        ls public/workbox-*.js.map | cut -d "/" -f 2 >> refresh.txt
-        python3 build_script/Refresh.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r refresh.txt -t push
-        curl -H "Content-Type: application/x-www-form-urlencoded" -X POST "https://pubsubhubbub.appspot.com/publish?hub.mode=publish&hub.url=https://potat0.cc/atom.xml"
+      uses: fangbinwei/aliyun-oss-website-action@v1
+      with:
+          accessKeyId: ${{ secrets.ALIYUN_ACCESSKEY_ID }}
+          accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
+          bucket: potat0-box
+          endpoint: oss-cn-hangzhou.aliyuncs.com
+          folder: "public"
+          incremental: true
+          skipSetting: true
