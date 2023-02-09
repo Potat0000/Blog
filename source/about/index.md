@@ -6,9 +6,13 @@ layout: about
 
 我是 Potat0，就读于~~下沙小清华~~。
 
-Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking，顺带做一做 Misc。
+Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking。
 
 ----------
+
+我目前运营有 Potat0 Network (AS200078)，你可以访问 https://net.potat0.cc/ 获得相关信息。
+
+I currently operate Potat0 Network (AS200078). Please visit https://net.potat0.cc/ for more information.
 
 欢迎在 DN42 与我 Peer！你可以访问 https://dn42.potat0.cc/ 获得相关信息。
 
