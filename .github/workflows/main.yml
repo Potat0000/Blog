@@ -2,49 +2,57 @@ name: Auto build blog
 on:
   push:
     branches:
-      - master
+      - main
   repository_dispatch:
   workflow_dispatch:
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@main
-      with:
-        node-version: '16.x'
-    - uses: actions/setup-python@main
-      with:
-        python-version: '3.x'
-    - name: Check out code
-      uses: actions/checkout@main
-    - name: Fetch Posts
-      run: |
-        git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
-        python3 build_script/gen_updatedtime.py
-        rm -rf source/_posts/.git*
-    - name: Install packages
-      run: |
-        npm install -g hexo-cli
-        npm install
-    - name: Get and Patch Lib Files
-      run: |
-        cp source/img/icon/favicon.ico source/
-        bash build_script/get_libs.sh
-    - name: Build
-      run: |
-        hexo g
-        sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
-        sed -i 's`<div class="beian"><span>`<div class="beian"><span><a href="https://icp.gov.moe/?keyword=20221816"target="_blank"rel="nofollow">萌ICP备20221816号</a></span><span style="margin-bottom:4px">`g' `grep '<div class="beian">' -rl ./public`
-    - name: Clean up
-      run: |
-        cd public
-        rm -rf xml
-        rm img/avatar.png img/default.png img/fluid.png
-    - name: Deploy to Aliyun OSS
-      uses: fangbinwei/aliyun-oss-website-action@v1
-      with:
+      - name: Set up Node.js
+        uses: actions/setup-node@main
+        with:
+          node-version: "16.x"
+      - uses: actions/setup-python@main
+        with:
+          python-version: "3.x"
+      - name: Check out code
+        uses: actions/checkout@main
+      - name: Fetch Posts
+        run: |
+          git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
+          python3 build_script/gen_updatedtime.py
+          rm -rf source/_posts/.git*
+      - name: Install packages
+        run: |
+          npm install -g hexo-cli
+          npm install
+      - name: Get and Patch Lib Files
+        run: |
+          cp source/img/icon/favicon.ico source/
+          curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
+          curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
+          curl https://cdn.jsdelivr.net/npm/no-darkreader@1/nodarkreader.min.js --create-dirs -o source/lib/nodarkreader/nodarkreader.min.js
+      - name: Build
+        run: |
+          hexo g
+          sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
+      - name: Clean up
+        run: |
+          cd public
+          rm -rf xml
+          rm img/avatar.png img/default.png img/fluid.png
+      - name: Brotli
+        uses: charlesworth/compress-action@1.0.0
+        with:
+          target-directory: public
+      - name: Deploy to Aliyun OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
           accessKeyId: ${{ secrets.ALIYUN_ACCESSKEY_ID }}
           accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
           bucket: potat0-box

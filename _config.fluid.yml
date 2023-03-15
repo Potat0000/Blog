@@ -1,3 +1,4 @@
+---
 #---------------------------
 # Hexo Theme Fluid
 # Author: Fluid-dev
@@ -9,7 +10,6 @@
 # Guide: https://hexo.fluid-dev.com/docs/en/guide/
 # You can get more detailed help from the guide
 #---------------------------
-
 
 #---------------------------
 # 全局
@@ -117,7 +117,7 @@ fun_features:
   # 加载进度条
   # Progress bar when loading
   progressbar:
-    enable: true
+    enable: false
     height_px: 3
     color: "#29d"
     # See: https://github.com/rstacruz/nprogress
@@ -242,7 +242,7 @@ custom_css:
 
 # 网页访问统计
 # Analysis of website visitors
-web_analytics:  # 网页访问统计
+web_analytics: # 网页访问统计
   enable: true
 
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
@@ -275,7 +275,7 @@ web_analytics:  # 网页访问统计
   # 51.la 站点统计 ID
   # 51.la analytics
   # See: https://www.51.la/user/site/index
-  woyaola:  # 51.la 站点统计 ID，参见
+  woyaola: # 51.la 站点统计 ID，参见
 
   # 友盟/cnzz 站点统计 web_id
   # cnzz analytics
@@ -318,7 +318,6 @@ lazyload:
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
 iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 
-
 #---------------------------
 # 页头
 # Header
@@ -352,8 +351,16 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     # - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "AS200078", link: "https://net.potat0.cc/", icon: "iconfont icon-network" }
-    - { key: "DN42", link: "https://dn42.potat0.cc/", icon: "iconfont icon-network" }
+    - {
+        key: "AS200078",
+        link: "https://net.potat0.cc/",
+        icon: "iconfont icon-network",
+      }
+    - {
+        key: "DN42",
+        link: "https://dn42.potat0.cc/",
+        icon: "iconfont icon-network",
+      }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
@@ -420,7 +427,6 @@ open_graph:
   fb_admins:
   fb_app_id:
 
-
 #---------------------------
 # 页脚
 # Footer
@@ -428,11 +434,10 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
-  content: '
+  content: |
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-  '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
@@ -456,7 +461,6 @@ footer:
     police_code: 33010602011812
     # 公安备案的图片. 为空时不显示备案图片
     police_icon: /img/police_beian.png
-
 
 #---------------------------
 # 首页
@@ -506,7 +510,7 @@ index:
 
       # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "fluid", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
       # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
-      keys: ['hitokoto']
+      keys: ["hitokoto"]
 
   # 自动截取文章摘要
   # Auto extract post
@@ -530,7 +534,6 @@ index:
   post_sticky:
     enable: true
     icon: "iconfont icon-top"
-
 
 #---------------------------
 # 文章页
@@ -654,7 +657,7 @@ post:
 
     # CreativeCommons license
     # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
-    license: 'BY-NC-SA'
+    license: "BY-NC-SA"
 
     # 显示作者
     author:
@@ -688,7 +691,7 @@ post:
     enable: true
     # 放大后图片链接替换规则，可用于将压缩图片链接替换为原图片链接，如 ['-slim', ''] 是将链接中 `-slim` 移除；如果想使用正则请使用 `re:` 前缀，如 ['re:\\d{3,4}\\/\\d{3,4}\\/', '']
     # The image url replacement when zooming, the feature can be used to replace the compressed image to the original image, eg: ['-slim', ''] removes `-slim` from the image url when zooming; if you want to use regular, use prefix `re:`, eg: ['re:\\d{3,4}\\/\\d{3,4}\\/','']
-    img_url_replace: ['', '']
+    img_url_replace: ["", ""]
 
   # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
   # Support footnote syntax, footnotes will be generated at the bottom of the post page. If the Markdown renderer itself supports it, please disable it, otherwise it may conflict
@@ -696,7 +699,7 @@ post:
     enable: true
     # 脚注的节标题，也可以在 front-matter 中通过 `footnote: <h2>Reference</h2>` 这种形式修改单独页面的 header
     # The section title of the footnote, you can also modify the header of a single page in the form of `footnote: <h2>Reference</h2>` in front-matter
-    header: ''
+    header: ""
 
   # 数学公式，开启之前需要更换 Markdown 渲染器，否则复杂公式会有兼容问题，具体请见：https://hexo.fluid-dev.com/docs/guide/##latex-数学公式
   # Mathematical formula. If enable, you need to change the Markdown renderer, see: https://hexo.fluid-dev.com/docs/en/guide/#math
@@ -724,7 +727,7 @@ post:
     specific: true
 
     # See: http://mermaid-js.github.io/mermaid/
-    options: { theme: 'default' }
+    options: { theme: "default" }
 
   # 评论插件
   # Comment plugin
@@ -734,7 +737,6 @@ post:
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
     type: utterances
-
 
 #---------------------------
 # 评论插件
@@ -777,9 +779,9 @@ gitalk:
   clientSecret:
   repo:
   owner:
-  admin: ['name']
+  admin: ["name"]
   language: zh-CN
-  labels: ['Gitalk']
+  labels: ["Gitalk"]
   perPage: 10
   pagerDirection: last
   distractionFreeMode: false
@@ -799,14 +801,14 @@ valine:
   appKey:
   path: window.location.pathname
   placeholder:
-  avatar: 'retro'
-  meta: ['nick', 'mail', 'link']
+  avatar: "retro"
+  meta: ["nick", "mail", "link"]
   requiredFields: []
   pageSize: 10
-  lang: 'zh-CN'
+  lang: "zh-CN"
   highlight: false
   recordIP: false
-  serverURLs: ''
+  serverURLs: ""
   emojiCDN:
   emojiMaps:
   enableQQ: false
@@ -816,12 +818,12 @@ valine:
 # Derived from Valine, with self-hosted service and new features
 # See: https://waline.js.org/
 waline:
-  serverURL: ''
+  serverURL: ""
   path: window.location.pathname
-  meta: ['nick', 'mail', 'link']
-  requiredMeta: ['nick']
-  lang: 'zh-CN'
-  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  meta: ["nick", "mail", "link"]
+  requiredMeta: ["nick"]
+  lang: "zh-CN"
+  emoji: ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
   dark: 'html[data-user-color-scheme="dark"]'
   wordLimit: 0
   pageSize: 10
@@ -831,15 +833,15 @@ waline:
 # Based on third-party service, insufficient support for regions outside China
 # http://changyan.kuaizhan.com
 changyan:
-  appid: ''
-  appkey: ''
+  appid: ""
+  appkey: ""
 
 # 来必力 Livere
 # 基于第三方的服务
 # Based on third-party service
 # See: https://www.livere.com
 livere:
-  uid: ''
+  uid: ""
 
 # Remark42
 # 需要自托管服务端
@@ -850,7 +852,7 @@ remark42:
   site_id:
   max_shown_comments: 10
   locale: zh
-  components: ['embed']
+  components: ["embed"]
 
 # Twikoo
 # 基于腾讯云开发
@@ -878,7 +880,6 @@ archive:
   banner_img: /img/background.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
-
 
 #---------------------------
 # 分类页
@@ -908,7 +909,6 @@ category:
   # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
   post_limit: 10
 
-
 #---------------------------
 # 标签页
 # Tag Page
@@ -925,7 +925,6 @@ tag:
     start_color: "#BBBBEE"
     end_color: "#337ab7"
 
-
 #---------------------------
 # 关于页
 # About Page
@@ -941,11 +940,22 @@ about:
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-telegram-fill", link: "https://t.me/Potat0_PM_Bot", tip: "Telegram" }
-    - { class: "iconfont icon-github-fill", link: "https://github.com/Potat0000", tip: "GitHub" }
+    - {
+        class: "iconfont icon-telegram-fill",
+        link: "https://t.me/Potat0_PM_Bot",
+        tip: "Telegram",
+      }
+    - {
+        class: "iconfont icon-github-fill",
+        link: "https://github.com/Potat0000",
+        tip: "GitHub",
+      }
     - { class: "iconfont icon-mail", link: "mailto:i@potat0.cc", tip: "Email" }
-    - { class: "iconfont icon-network", link: "https://dn42.potat0.cc/", tip: "DN42" }
-
+    - {
+        class: "iconfont icon-network",
+        link: "https://dn42.potat0.cc/",
+        tip: "DN42",
+      }
 
 #---------------------------
 # 自定义页
@@ -959,7 +969,6 @@ page:
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
-
 #---------------------------
 # 404页
 # 404 Page
@@ -972,7 +981,6 @@ page404:
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
   redirect_delay: 5000
-
 
 #---------------------------
 # 友链页
@@ -989,233 +997,233 @@ links:
   # Use the link above to get QQ Avatar
   items:
     - {
-      title: "Li4n0",
-      intro: "Li4n0's NoteBook",
-      link: "https://0n0.fun/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=PsxMPhLEJM5AJCFZ8UNQKQ&s=640"
-    }
+        title: "Li4n0",
+        intro: "Li4n0's NoteBook",
+        link: "https://0n0.fun/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=PsxMPhLEJM5AJCFZ8UNQKQ&s=640",
+      }
     - {
-      title: "Gamison",
-      intro: "GaMiSon's Spacestation",
-      link: "https://aw.gamison.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=0VaAu2go9mvrMXu1ibmKy1g&s=640"
-    }
+        title: "Gamison",
+        intro: "GaMiSon's Spacestation",
+        link: "https://aw.gamison.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=0VaAu2go9mvrMXu1ibmKy1g&s=640",
+      }
     - {
-      title: "Cyris",
-      intro: "绿生的幻想乡",
-      link: "https://cyris.moe/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=icDPfAgLsNVm0euuODccaGQ&s=640"
-    }
+        title: "Cyris",
+        intro: "绿生的幻想乡",
+        link: "https://cyris.moe/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=icDPfAgLsNVm0euuODccaGQ&s=640",
+      }
     - {
-      title: "Annevi",
-      intro: "Annevi's Blog",
-      link: "https://annevi.cn/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=WN9x96MpjSJ3Gc7a3SHtDw&s=640"
-    }
+        title: "Annevi",
+        intro: "Annevi's Blog",
+        link: "https://annevi.cn/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=WN9x96MpjSJ3Gc7a3SHtDw&s=640",
+      }
     - {
-      title: "E99p1ant",
-      intro: "Light Cube",
-      link: "https://github.red/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=AJQ9RJRCavhSibMZtRq2JOQ&s=640"
-    }
+        title: "E99p1ant",
+        intro: "Light Cube",
+        link: "https://github.red/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=AJQ9RJRCavhSibMZtRq2JOQ&s=640",
+      }
     - {
-      title: "wenzhuan",
-      intro: "V1n",
-      link: "https://wzyxv1n.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=96n5C3VZpBd0icGtwbdafSw&s=640"
-    }
+        title: "wenzhuan",
+        intro: "V1n",
+        link: "https://wzyxv1n.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=96n5C3VZpBd0icGtwbdafSw&s=640",
+      }
     - {
-      title: "Moesang",
-      intro: "Moesang's Blog",
-      link: "https://blog.wz22.cc/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=e2gkoS3NQbice8RHxErVNpw&s=640"
-    }
+        title: "Moesang",
+        intro: "Moesang's Blog",
+        link: "https://blog.wz22.cc/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=e2gkoS3NQbice8RHxErVNpw&s=640",
+      }
     - {
-      title: "Michael",
-      intro: "Michael's Blog",
-      link: "https://git.michaelsblog.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=w66B7Ttcs3bch1fzF2UA6g&s=640"
-    }
+        title: "Michael",
+        intro: "Michael's Blog",
+        link: "https://git.michaelsblog.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=w66B7Ttcs3bch1fzF2UA6g&s=640",
+      }
     - {
-      title: "Kevin",
-      intro: "crumbledwall's Blog",
-      link: "https://harmless.blue/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=jaXAqywDMbia39e4OfGXicPQ&s=640"
-    }
+        title: "Kevin",
+        intro: "crumbledwall's Blog",
+        link: "https://harmless.blue/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=jaXAqywDMbia39e4OfGXicPQ&s=640",
+      }
     - {
-      title: "R4u",
-      intro: "Rinlang",
-      link: "https://r4u.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rJCqQv1EzicpDW77nMa5bYw&s=640"
-    }
+        title: "R4u",
+        intro: "Rinlang",
+        link: "https://r4u.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rJCqQv1EzicpDW77nMa5bYw&s=640",
+      }
     - {
-      title: "ObjectNotFound",
-      intro: "CodingBox 技术博客",
-      link: "https://www.zhouweitong.site/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=yQnkF86Uy6UkZrZmFYLL4g&s=640"
-    }
+        title: "ObjectNotFound",
+        intro: "CodingBox 技术博客",
+        link: "https://www.zhouweitong.site/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=yQnkF86Uy6UkZrZmFYLL4g&s=640",
+      }
     - {
-      title: "Rosetta",
-      intro: "Jqy's Blog",
-      link: "https://r000setta.github.io/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=eQHtN69C2tgM8Ul8PmtTKw&s=640"
-    }
+        title: "Rosetta",
+        intro: "Jqy's Blog",
+        link: "https://r000setta.github.io/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=eQHtN69C2tgM8Ul8PmtTKw&s=640",
+      }
     - {
-      title: "Tinmix",
-      intro: "星空的蓝天",
-      link: "http://poi.ac/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=L2EclrAltb7lk3LBPY6oWA&s=640"
-    }
+        title: "Tinmix",
+        intro: "星空的蓝天",
+        link: "http://poi.ac/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=L2EclrAltb7lk3LBPY6oWA&s=640",
+      }
     - {
-      title: "Sw1tch",
-      intro: "Liki4",
-      link: "https://me.liki.link",
-      avatar: "https://me.liki.link/img/Liki4.jpg"
-    }
+        title: "Sw1tch",
+        intro: "Liki4",
+        link: "https://me.liki.link",
+        avatar: "https://me.liki.link/img/Liki4.jpg",
+      }
     - {
-      title: "0x4qE",
-      intro: "0x4qE's Blog",
-      link: "https://0727.site/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=K7icYial1VVzlNl7hrD9MlNw&s=640"
-    }
+        title: "0x4qE",
+        intro: "0x4qE's Blog",
+        link: "https://0727.site/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=K7icYial1VVzlNl7hrD9MlNw&s=640",
+      }
     - {
-      title: "xi4oyu",
-      intro: "feather's blog",
-      link: "https://www.xi4oyu.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=JfeMY6Lz5ZU4GmtTV85otQ&s=640"
-    }
+        title: "xi4oyu",
+        intro: "feather's blog",
+        link: "https://www.xi4oyu.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=JfeMY6Lz5ZU4GmtTV85otQ&s=640",
+      }
     - {
-      title: "Akira",
-      intro: "光と明",
-      link: "https://rinko.work/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=ku1vqyI1hLJr61PGIlic7Ow&s=640"
-    }
+        title: "Akira",
+        intro: "光と明",
+        link: "https://rinko.work/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=ku1vqyI1hLJr61PGIlic7Ow&s=640",
+      }
     - {
-      title: "digg12",
-      intro: "digg12's blog",
-      link: "https://thesoldierjack.cn/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=icawQKtjLcRiaj7scTRBZ9Qw&s=640"
-    }
+        title: "digg12",
+        intro: "digg12's blog",
+        link: "https://thesoldierjack.cn/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=icawQKtjLcRiaj7scTRBZ9Qw&s=640",
+      }
     - {
-      title: "Trotsky",
-      intro: "Trotsky's Blog",
-      link: "https://altonhe.github.io/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=LiasEshjTXTrNzJjPHVY3Vw&s=640"
-    }
+        title: "Trotsky",
+        intro: "Trotsky's Blog",
+        link: "https://altonhe.github.io/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=LiasEshjTXTrNzJjPHVY3Vw&s=640",
+      }
     - {
-      title: "chuj",
-      intro: "cj的小站",
-      link: "https://cjovi.icu/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=aM4tJSQSxB5gcauIMDEtUg&s=640"
-    }
+        title: "chuj",
+        intro: "cj的小站",
+        link: "https://cjovi.icu/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=aM4tJSQSxB5gcauIMDEtUg&s=640",
+      }
     - {
-      title: "Summer",
-      intro: "Summer's personal blog",
-      link: "https://blog.summ3r.top",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=4y6zxTBSB3cbseeyPvQWng&s=640"
-    }
+        title: "Summer",
+        intro: "Summer's personal blog",
+        link: "https://blog.summ3r.top",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=4y6zxTBSB3cbseeyPvQWng&s=640",
+      }
     - {
-      title: "0wl",
-      intro: "0wl's Blog",
-      link: "https://0wl.site/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=06FRYslcuprt59OxibicdhqQ&s=640"
-    }
+        title: "0wl",
+        intro: "0wl's Blog",
+        link: "https://0wl.site/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=06FRYslcuprt59OxibicdhqQ&s=640",
+      }
     - {
-      title: "4nsw3r",
-      intro: "4nsw3r's Blog",
-      link: "https://4nsw3r.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=j3LOiav9IluKSYg1VEibblZw&s=640"
-    }
+        title: "4nsw3r",
+        intro: "4nsw3r's Blog",
+        link: "https://4nsw3r.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=j3LOiav9IluKSYg1VEibblZw&s=640",
+      }
     - {
-      title: "Klrin",
-      intro: "Wu Junyi'Blog",
-      link: "https://blog.mjclouds.com/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=nnzEWNwxMS88jKYre5fOjg&s=640"
-    }
+        title: "Klrin",
+        intro: "Wu Junyi'Blog",
+        link: "https://blog.mjclouds.com/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=nnzEWNwxMS88jKYre5fOjg&s=640",
+      }
     - {
-      title: "Atom",
-      intro: "宅男的天台",
-      link: "https://homeboyc.cn/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zL7ME6iayxWtgR22bAbJDuQ&s=640"
-    }
+        title: "Atom",
+        intro: "宅男的天台",
+        link: "https://homeboyc.cn/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zL7ME6iayxWtgR22bAbJDuQ&s=640",
+      }
     - {
-      title: "RogerThat",
-      intro: "Wr'small*house",
-      link: "https://wr-web.github.io/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=p1TD1qwKfEK8NZExRDqic1A&s=640"
-    }
+        title: "RogerThat",
+        intro: "Wr'small*house",
+        link: "https://wr-web.github.io/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=p1TD1qwKfEK8NZExRDqic1A&s=640",
+      }
     - {
-      title: "Esonhugh",
-      intro: "Esonhugh's Blog",
-      link: "https://esonhugh.me/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=UweyTR1uamUaHhichp7APIw&s=640"
-    }
+        title: "Esonhugh",
+        intro: "Esonhugh's Blog",
+        link: "https://esonhugh.me/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=UweyTR1uamUaHhichp7APIw&s=640",
+      }
     - {
-      title: "Jacen",
-      intro: "Jacen's learing journey",
-      link: "https://www.waysoahc.xyz/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zxHwoVib2p8CuPHEjRMDsUA&s=640"
-    }
+        title: "Jacen",
+        intro: "Jacen's learing journey",
+        link: "https://www.waysoahc.xyz/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=zxHwoVib2p8CuPHEjRMDsUA&s=640",
+      }
     - {
-      title: "DOYER",
-      intro: "树屋",
-      link: "https://galaxy-r.github.io/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=h42NHF8icTKEN49lo6H07Ag&s=640"
-    }
+        title: "DOYER",
+        intro: "树屋",
+        link: "https://galaxy-r.github.io/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=h42NHF8icTKEN49lo6H07Ag&s=640",
+      }
     - {
-      title: "MiaoTony",
-      intro: "MiaoTony’s 小窝",
-      link: "https://miaotony.xyz/",
-      avatar: "https://cdn.jsdelivr.net/gh/miaotony/miaotony.github.io/medias/avatar.jpg"
-    }
+        title: "MiaoTony",
+        intro: "MiaoTony’s 小窝",
+        link: "https://miaotony.xyz/",
+        avatar: "https://cdn.jsdelivr.net/gh/miaotony/miaotony.github.io/medias/avatar.jpg",
+      }
     - {
-      title: "白夜",
-      intro: "白夜的幻想乡缘起",
-      link: "https://www.hakuya.work/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=BmACniaibVb6IL6LiaYF4Uvlw&s=640"
-    }
+        title: "白夜",
+        intro: "白夜的幻想乡缘起",
+        link: "https://www.hakuya.work/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=BmACniaibVb6IL6LiaYF4Uvlw&s=640",
+      }
     - {
-      title: "ek1ng",
-      intro: "ek1ng's Blog",
-      link: "https://ek1ng.com/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=pJFuHEqNaFk1If1STvRibWw&s=640"
-    }
+        title: "ek1ng",
+        intro: "ek1ng's Blog",
+        link: "https://ek1ng.com/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=pJFuHEqNaFk1If1STvRibWw&s=640",
+      }
     - {
-      title: "R1esbyfe",
-      intro: "R1esbyfe的小世界",
-      link: "https://r1esbyfe.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=FLyUHP6nYov19gA0ia83u8Q&s=640"
-    }
+        title: "R1esbyfe",
+        intro: "R1esbyfe的小世界",
+        link: "https://r1esbyfe.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=FLyUHP6nYov19gA0ia83u8Q&s=640",
+      }
     - {
-      title: "t0hka",
-      intro: "T0hka's blog",
-      link: "https://blog.t0hka.top/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=EYNwm1PQe8o5OcghFb4zfw&s=640"
-    }
+        title: "t0hka",
+        intro: "T0hka's blog",
+        link: "https://blog.t0hka.top/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=EYNwm1PQe8o5OcghFb4zfw&s=640",
+      }
     - {
-      title: "yolande",
-      intro: "yolande",
-      link: "https://y01and3.github.io/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rY328VIqDc7lNtujYic8JxA&s=640"
-    }
+        title: "yolande",
+        intro: "yolande",
+        link: "https://y01and3.github.io/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rY328VIqDc7lNtujYic8JxA&s=640",
+      }
     - {
-      title: "taka",
-      intro: "Kabuto-taka",
-      link: "https://www.cnblogs.com/kabuto-taka/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=oPn2ez6Nq12GqPZG6cV7nw&s=640"
-    }
+        title: "taka",
+        intro: "Kabuto-taka",
+        link: "https://www.cnblogs.com/kabuto-taka/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=oPn2ez6Nq12GqPZG6cV7nw&s=640",
+      }
     - {
-      title: "psyq",
-      intro: "psyq的日常",
-      link: "https://blog.psyqlk.space/",
-      avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=vFCLPytxmpqlzpxG55pdyw&s=640"
-    }
+        title: "psyq",
+        intro: "psyq的日常",
+        link: "https://blog.psyqlk.space/",
+        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=vFCLPytxmpqlzpxG55pdyw&s=640",
+      }
     - {
-      title: "Hiiragi",
-      intro: "柊子的博客",
-      link: "https://blog.hiirachan.moe",
-      avatar: "https://blog.hiirachan.moe/usr/Hiiragi.jpg"
-    }
+        title: "Hiiragi",
+        intro: "柊子的博客",
+        link: "https://blog.hiirachan.moe",
+        avatar: "https://blog.hiirachan.moe/usr/Hiiragi.jpg",
+      }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
@@ -1225,7 +1233,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: false
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：/img/avatar.webp</li></ul>'
+    content: "<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>ID：Potat0</li><li>博客名：Potat0 Box</li><li>链接：https://potat0.cc/</li><li>头像：/img/avatar.webp</li></ul>"
 
   # 评论插件
   # Comment plugin
@@ -1235,7 +1243,6 @@ links:
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
     type: utterances
-
 
 #---------------------------
 # 以下是配置 JS CSS 等静态资源的 URL 前缀，可以自定义成 CDN 地址，
@@ -1252,16 +1259,15 @@ static_prefix:
   internal_css: /css/
   internal_img: /img/
 
-  anchor: /lib/anchor-js/
-  bootstrap: /lib/bootstrap/
-  clipboard: /lib/clipboard/
-  echarts: /lib/echarts/
-  fancybox: /lib/fancybox/
-  github_markdown: /lib/github-markdown-css/
-  jquery: /lib/jquery/
-  katex: /lib/katex/
-  mermaid: /lib/mermaid/
-  nprogress: /lib/nprogress/
-  prismjs: /lib/prismjs/
-  tocbot: /lib/tocbot/
-  typed: /lib/typed.js/
+  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
+  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
+  clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
+  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
+  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
+  jquery: https://lib.baomitu.com/jquery/3.6.0/
+  katex: https://lib.baomitu.com/KaTeX/0.16.2/
+  mermaid: https://lib.baomitu.com/mermaid/8.14.0/
+  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
+  prismjs: https://lib.baomitu.com/prism/1.29.0/
+  tocbot: https://lib.baomitu.com/tocbot/4.18.2/
+  typed: https://lib.baomitu.com/typed.js/2.0.12/
