@@ -1,0 +1,1 @@
+hexo.extend.injector.register('body_end', '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "c842eea4c68a418782508c4e09c656e9"}\'></script>', 'default');
