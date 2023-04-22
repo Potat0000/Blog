@@ -237,7 +237,7 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - //at.alicdn.com/t/c/font_3541742_r89uhl3s8lp.css
+  - //at.alicdn.com/t/c/font_3541742_vjxazwkdnv.css
   - /fonts/roboto-mono/index.min.css
 
 # 网页访问统计
@@ -359,7 +359,7 @@ navbar:
     - {
         key: "DN42",
         link: "https://dn42.potat0.cc/",
-        icon: "iconfont icon-connect",
+        icon: "iconfont icon-dn42",
       }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
@@ -957,7 +957,7 @@ about:
         tip: "AS200078",
       }
     - {
-        class: "iconfont icon-connect",
+        class: "iconfont icon-dn42",
         link: "https://dn42.potat0.cc/",
         tip: "DN42",
       }
