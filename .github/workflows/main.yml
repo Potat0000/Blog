@@ -46,7 +46,7 @@ jobs:
         run: |
           cd public
           rm -rf xml
-          rm img/avatar.png img/default.png img/fluid.png
+          rm img/default.png img/fluid.png
       - name: Brotli
         uses: charlesworth/compress-action@1.0.0
         with:
