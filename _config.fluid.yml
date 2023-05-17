@@ -1002,40 +1002,10 @@ links:
   # Use the link above to get QQ Avatar
   items:
     - {
-        title: "Li4n0",
-        intro: "Li4n0's NoteBook",
-        link: "https://0n0.fun/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=PsxMPhLEJM5AJCFZ8UNQKQ&s=640",
-      }
-    - {
-        title: "Gamison",
-        intro: "GaMiSon's Spacestation",
-        link: "https://aw.gamison.top/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=0VaAu2go9mvrMXu1ibmKy1g&s=640",
-      }
-    - {
-        title: "Cyris",
-        intro: "绿生的幻想乡",
-        link: "https://cyris.moe/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=icDPfAgLsNVm0euuODccaGQ&s=640",
-      }
-    - {
-        title: "Annevi",
-        intro: "Annevi's Blog",
-        link: "https://annevi.cn/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=WN9x96MpjSJ3Gc7a3SHtDw&s=640",
-      }
-    - {
         title: "E99p1ant",
         intro: "Light Cube",
         link: "https://github.red/",
         avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=AJQ9RJRCavhSibMZtRq2JOQ&s=640",
-      }
-    - {
-        title: "wenzhuan",
-        intro: "V1n",
-        link: "https://wzyxv1n.top/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=96n5C3VZpBd0icGtwbdafSw&s=640",
       }
     - {
         title: "Moesang",
@@ -1050,28 +1020,10 @@ links:
         avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=w66B7Ttcs3bch1fzF2UA6g&s=640",
       }
     - {
-        title: "Kevin",
-        intro: "crumbledwall's Blog",
-        link: "https://harmless.blue/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=jaXAqywDMbia39e4OfGXicPQ&s=640",
-      }
-    - {
         title: "R4u",
         intro: "Rinlang",
         link: "https://r4u.top/",
         avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=rJCqQv1EzicpDW77nMa5bYw&s=640",
-      }
-    - {
-        title: "ObjectNotFound",
-        intro: "CodingBox 技术博客",
-        link: "https://www.zhouweitong.site/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=yQnkF86Uy6UkZrZmFYLL4g&s=640",
-      }
-    - {
-        title: "Rosetta",
-        intro: "Jqy's Blog",
-        link: "https://r000setta.github.io/",
-        avatar: "https://thirdqq.qlogo.cn/g?b=sdk&k=eQHtN69C2tgM8Ul8PmtTKw&s=640",
       }
     - {
         title: "Tinmix",
