@@ -42,6 +42,7 @@ jobs:
         run: |
           hexo g
           sed -i 's`IEJUMPIEJUMPIEJUMP`if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);`g' `grep IEJUMPIEJUMPIEJUMP -rl ./public`
+          sed -i 's`<div class="beian"><span>`<div class="beian"><span><a href="https://icp.gov.moe/?keyword=20221816"target="_blank"rel="nofollow">萌ICP备20221816号</a></span><span style="margin-bottom:.25rem">`g' `grep '<div class="beian">' -rl ./public`
       - name: Clean up
         run: |
           cd public
