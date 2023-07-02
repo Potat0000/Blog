@@ -493,7 +493,7 @@ index:
 
       # 请求地址
       # Request url
-      url: "https://v1.hitokoto.cn/?c=d&c=e&c=f&c=j&c=k&encode=text&max_length=30"
+      url: "https://v1.hitokoto.cn/?c=d&c=e&c=f&c=j&c=k&encode=json&charset=utf-8&max_length=30"
 
       # 请求方法
       # Request method
