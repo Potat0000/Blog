@@ -1247,6 +1247,7 @@ static_prefix:
   jquery: https://lib.baomitu.com/jquery/3.6.4/
   katex: https://lib.baomitu.com/KaTeX/0.16.2/
   mermaid: https://lib.baomitu.com/mermaid/8.14.0/
+  moment: https://lib.baomitu.com/moment.js/2.29.4/
   nprogress: https://lib.baomitu.com/nprogress/0.2.0/
   prismjs: https://lib.baomitu.com/prism/1.29.0/
   tocbot: https://lib.baomitu.com/tocbot/4.20.1/
