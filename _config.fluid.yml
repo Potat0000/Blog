@@ -1239,17 +1239,17 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://cdn.staticfile.org/anchor-js/4.3.1/
-  bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.6.1/
-  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.11/
-  fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
-  github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
-  hint: https://cdn.staticfile.org/hint.css/2.7.0/
-  jquery: https://cdn.staticfile.org/jquery/3.6.4/
-  katex: https://cdn.staticfile.org/KaTeX/0.16.2/
-  mermaid: https://cdn.staticfile.org/mermaid/8.14.0/
-  moment: https://cdn.staticfile.org/moment.js/2.29.4/
-  nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
-  prismjs: https://cdn.staticfile.org/prism/1.29.0/
-  tocbot: https://cdn.staticfile.org/tocbot/4.20.1/
-  typed: https://cdn.staticfile.org/typed.js/2.0.12/
+  anchor: //cdn.staticfile.org/anchor-js/4.3.1/
+  bootstrap: //cdn.staticfile.org/twitter-bootstrap/4.6.1/
+  clipboard: //cdn.staticfile.org/clipboard.js/2.0.11/
+  fancybox: //cdn.staticfile.org/fancybox/3.5.7/
+  github_markdown: //cdn.staticfile.org/github-markdown-css/4.0.0/
+  hint: //cdn.staticfile.org/hint.css/2.7.0/
+  jquery: //cdn.staticfile.org/jquery/3.6.4/
+  katex: //cdn.staticfile.org/KaTeX/0.16.2/
+  mermaid: //cdn.staticfile.org/mermaid/8.14.0/
+  moment: //cdn.staticfile.org/moment.js/2.29.4/
+  nprogress: //cdn.staticfile.org/nprogress/0.2.0/
+  prismjs: //cdn.staticfile.org/prism/1.29.0/
+  tocbot: //cdn.staticfile.org/tocbot/4.20.1/
+  typed: //cdn.staticfile.org/typed.js/2.0.12/
