@@ -1239,16 +1239,16 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
-  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
-  clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
-  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
-  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
-  jquery: https://lib.baomitu.com/jquery/3.6.4/
-  katex: https://lib.baomitu.com/KaTeX/0.16.2/
-  mermaid: https://lib.baomitu.com/mermaid/8.14.0/
-  moment: https://lib.baomitu.com/moment.js/2.29.4/
-  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
-  prismjs: https://lib.baomitu.com/prism/1.29.0/
-  tocbot: https://lib.baomitu.com/tocbot/4.20.1/
-  typed: https://lib.baomitu.com/typed.js/2.0.12/
+  anchor: https://cdn.staticfile.org/anchor-js/4.3.1/
+  bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.6.1/
+  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.11/
+  fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
+  github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
+  jquery: https://cdn.staticfile.org/jquery/3.6.4/
+  katex: https://cdn.staticfile.org/KaTeX/0.16.2/
+  mermaid: https://cdn.staticfile.org/mermaid/8.14.0/
+  moment: https://cdn.staticfile.org/moment.js/2.29.4/
+  nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
+  prismjs: https://cdn.staticfile.org/prism/1.29.0/
+  tocbot: https://cdn.staticfile.org/tocbot/4.20.1/
+  typed: https://cdn.staticfile.org/typed.js/2.0.12/
