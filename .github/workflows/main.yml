@@ -16,10 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@main
         with:
-          node-version: "16.x"
+          node-version: 16.x
       - uses: actions/setup-python@main
         with:
-          python-version: "3.x"
+          python-version: 3.x
       - name: Check out code
         uses: actions/checkout@main
       - name: Fetch Posts
@@ -55,6 +55,13 @@ jobs:
           accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
           bucket: potat0-box
           endpoint: oss-cn-hangzhou.aliyuncs.com
-          folder: "public"
+          folder: public
           incremental: true
           skipSetting: true
+      - name: Aliyun CDN Refresh
+        uses: visionwx/ali-cdn-refresh@v0.1.1
+        with:
+          accessKeyId: ${{ secrets.ALIYUN_ACCESSKEY_ID }}
+          accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
+          type: Directory
+          path: https://potat0.cc/
