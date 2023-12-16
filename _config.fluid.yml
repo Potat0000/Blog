@@ -1244,6 +1244,7 @@ static_prefix:
   clipboard: https://cdn.staticfile.org/clipboard.js/2.0.11/
   fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
   github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
+  hint: https://cdn.staticfile.org/hint.css/2.7.0/
   jquery: https://cdn.staticfile.org/jquery/3.6.4/
   katex: https://cdn.staticfile.org/KaTeX/0.16.2/
   mermaid: https://cdn.staticfile.org/mermaid/8.14.0/
