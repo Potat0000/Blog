@@ -36,7 +36,6 @@ jobs:
           cp source/img/icon/favicon.ico source/
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
-          curl https://cdn.jsdelivr.net/npm/no-darkreader@1/nodarkreader.min.js --create-dirs -o source/lib/nodarkreader/nodarkreader.min.js
           sed -i 's,http://,https://,g' node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs
       - name: Build
         run: |
