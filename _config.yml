@@ -1,16 +1,16 @@
 theme: fluid
 language: zh-CN
 
-title: 'Potat0 Box'
-subtitle: '世界那么大 我想去看看'
-description: 'Just a box for Potat0.'
+title: "Potat0 Box"
+subtitle: "世界那么大 我想去看看"
+description: "A box of Potat0"
 author: Potat0
-SEOTitle: 'Potat0 Box'
+SEOTitle: "Potat0 Box"
 default_layout: post
 new_post_name: :year-:month-:day-:title.md
 permalink: posts/:year:month:day/:title/
 post_asset_folder: true
-url: 'https://potat0.cc/'
+url: "https://potat0.cc/"
 
 markdown:
   render:
@@ -19,7 +19,7 @@ markdown:
     breaks: true
     linkify: true
     typographer: true
-    quotes: '“”‘’'
+    quotes: "“”‘’"
   plugins:
     - markdown-it-abbr
     - markdown-it-cjk-breaks
@@ -42,13 +42,13 @@ css_minifier:
   enable: true
   silent: false
   exclude:
-    - '*.min.css'
+    - "*.min.css"
 js_minifier:
   enable: true
   mangle: true
   silent: false
   exclude:
-    - '*.min.js'
+    - "*.min.js"
 image_minifier:
   enable: true
   interlaced: true

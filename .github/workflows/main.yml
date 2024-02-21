@@ -33,7 +33,8 @@ jobs:
           npm install
       - name: Get and Patch Lib Files
         run: |
-          cp source/img/icon/favicon.ico source/
+          mv source/favicon/* source/
+          rm -rf source/favicon
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
           sed -i 's,http://,https://,g' node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs

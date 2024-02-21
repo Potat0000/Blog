@@ -1,0 +1,37 @@
+{
+    "name": "Potat0 Box",
+    "short_name": "Potat0 Box",
+    "description": "A box of Potat0",
+    "start_url": "https://potat0.cc/",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "maskable_icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#2F4154",
+    "background_color": "#2F4154",
+    "display": "standalone",
+    "orientation": "portrait",
+    "shortcuts": [
+        {
+            "name": "Home",
+            "short_name": "Home",
+            "description": "Back to homepage",
+            "url": "https://potat0.cc/",
+            "icons": [
+                {
+                    "src": "favicon.png",
+                    "sizes": "512x512"
+                }
+            ]
+        }
+    ]
+}

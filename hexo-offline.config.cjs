@@ -1,6 +1,6 @@
 module.exports = {
     globPatterns: ["**/*.{js,css,webp,png,jpg,gif,svg,eot,ttf,woff,woff2}"],
-    globIgnores: ["img/avatar.png", "img/default.png", "img/fluid.png"],
+    globIgnores: ["img/default.png", "img/fluid.png"],
     globDirectory: "./public",
     runtimeCaching: [
         {
@@ -13,6 +13,10 @@ module.exports = {
         },
         {
             urlPattern: /^https:\/\/utteranc\.es\/.*/,
+            handler: "CacheFirst"
+        },
+        {
+            urlPattern: /^https:\/\/lib\.baomitu\.com\/.*/,
             handler: "CacheFirst"
         }
     ]

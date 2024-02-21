@@ -17,9 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
 
  <webfeeds:cover image="/img/background.webp" />
- <webfeeds:icon>/img/icon/maskable.png</webfeeds:icon>
- <webfeeds:logo>/img/icon/maskable.png</webfeeds:logo>
- <webfeeds:accentColor>2f4154</webfeeds:accentColor>
+ <webfeeds:icon>favicon.png</webfeeds:icon>
+ <webfeeds:logo>favicon.png</webfeeds:logo>
+ <webfeeds:accentColor>2F4154</webfeeds:accentColor>
  <webfeeds:related layout="card" target="browser"/>
 
   {% for post in posts.toArray() %}
