@@ -4,7 +4,7 @@
   "hexo": {
     "version": "7.1.1"
   },
-  "license": "EPL-1.0",
+  "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Potat0000/Blog.git"
