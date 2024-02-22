@@ -38,24 +38,6 @@ nofollow:
   enable: true
   field: site
 
-html_minifier:
-  enable: true
-  ignore_error: false
-  silent: false
-css_minifier:
-  enable: true
-  silent: false
-  exclude:
-    - "*.min.css"
-js_minifier:
-  enable: true
-  mangle: true
-  silent: false
-  exclude:
-    - "*.min.js"
-image_minifier:
-  enable: false
-
 sitemap:
   path: sitemap.xml
   rel: true
