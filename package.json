@@ -2,7 +2,7 @@
   "name": "potat0-box",
   "version": "1.0.0",
   "hexo": {
-    "version": "7.0.0"
+    "version": "7.1.1"
   },
   "license": "EPL-1.0",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "git+https://github.com/Potat0000/Blog.git"
   },
   "dependencies": {
-    "hexo": "^7.0.0",
+    "hexo": "^7.1.1",
     "hexo-all-minifier": "^0.5.7",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^2.0.0",
