@@ -456,6 +456,8 @@ footer:
     police_code: 33010602011812
     # 公安备案的图片. 为空时不显示备案图片
     police_icon: /img/police_beian.png
+    # 萌 ICP 备案号
+    moeicp_code: 20221816
 
 #---------------------------
 # 首页

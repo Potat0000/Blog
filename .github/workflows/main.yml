@@ -46,7 +46,7 @@ jobs:
           rm -rf source/favicon
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
-          sed -i 's,http://,https://,g' node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs
+          mv source/beian.ejs node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs
       - name: Patch for CN-Domain website
         if: ${{ matrix.platform == 'cn' }}
         run: |
@@ -59,11 +59,11 @@ jobs:
           sed -i 's/icp_text: 浙ICP备2021017952号-1/icp_text: 浙ICP备2021017952号-2/g' _config.fluid.yml
           sed -i 's/police_text: 浙公网安备33010602011812号/police_text:/g' _config.fluid.yml
           sed -i 's/police_code: 33010602011812/police_code:/g' _config.fluid.yml
+          sed -i 's/moeicp_code: 20221816/moeicp_code: 20241816/g' _config.fluid.yml
       - name: Build
         run: |
           hexo g
           sed -i 's,IEJUMPIEJUMPIEJUMP,if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);,g' $(grep IEJUMPIEJUMPIEJUMP -rl ./public)
-          sed -i "s,<div class=\"beian\"><span>,<div class=\"beian\"><span><a href=\"https://icp.gov.moe/?keyword=$MOEICP\"target=\"_blank\"rel=\"nofollow\">萌ICP备$MOEICP号</a></span><span style=\"margin-bottom:.25rem\">,g" $(grep '<div class=\"beian\">' -rl ./public)
       - name: Clean up
         run: |
           cd public

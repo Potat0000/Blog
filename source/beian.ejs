@@ -1,0 +1,44 @@
+<div class="beian" style="flex-direction: column; align-items: center">
+    <% if(theme.footer.beian.moeicp_code) { %>
+        <span>
+            <a href="https://icp.gov.moe/?keyword=<%= theme.footer.beian.moeicp_code %>" target="_blank" rel="nofollow noopener">
+                萌ICP备<%- theme.footer.beian.moeicp_code %>号
+            </a>
+        </span>
+    <% } %>
+    <% if(theme.footer.beian.icp_text) { %>
+        <span>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+                <%- theme.footer.beian.icp_text %>
+            </a>
+        </span>
+    <% } %>
+    <% if(theme.footer.beian.police_text) { %>
+        <% if(theme.footer.beian.police_code) { %>
+            <span>
+                <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%= theme.footer.beian.police_code %>"
+                    target="_blank" rel="nofollow noopener" class="beian-police">
+                    <% if(theme.footer.beian.police_icon) { %>
+                        <img src="<%= url_for(theme.footer.beian.police_icon) %>" alt="police-icon" />
+                    <% } %>
+                    <span><%- theme.footer.beian.police_text %></span>
+                </a>
+            </span>
+        <% } else { %>
+            <span class="beian-police">
+                <% if(theme.footer.beian.police_icon) { %>
+                    <img src="<%= url_for(theme.footer.beian.police_icon) %>" alt="police-icon" />
+                <% } %>
+                <span class="beian-police"><%- theme.footer.beian.police_text %></span>
+            </span>
+        <% } %>
+    <% } %>
+</div>
+<style>
+    footer .beian > span:last-child {
+        margin: 0
+    }
+    footer .beian > span:not(:last-child) {
+        margin: 0 0 .25rem 0
+    }
+</style>
