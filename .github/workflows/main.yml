@@ -57,8 +57,8 @@ jobs:
           sed -i 's/potat0.cc/土豆.space/g' source/manifest.json
           sed -i 's/potat0.cc/土豆.space/g' source/robots.txt
           sed -i 's/icp_text: 浙ICP备2021017952号-1/icp_text: 浙ICP备2021017952号-2/g' _config.fluid.yml
-          sed -i 's/police_text: 浙公网安备33010602011812号/police_text:/g' _config.fluid.yml
-          sed -i 's/police_code: 33010602011812/police_code:/g' _config.fluid.yml
+          sed -i 's/police_text: 浙公网安备33010602011812号/police_text: 浙公网安备33010602013468号/g' _config.fluid.yml
+          sed -i 's/police_code: 33010602011812/police_code: 33010602013468/g' _config.fluid.yml
           sed -i 's/moeicp_code: 20221816/moeicp_code: 20241816/g' _config.fluid.yml
       - name: Build
         run: |
