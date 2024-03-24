@@ -10,6 +10,10 @@ Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking。
 
 ----------
 
+本站有一个中文域名的实验性站点，你可以在 [https://土豆.space](https://xn--udsw05j.space/) 访问。
+
+----------
+
 我目前运营有 Potat0 Network (AS200078)，你可以访问 https://net.potat0.cc/ 获得相关信息。
 
 I currently operate Potat0 Network (AS200078). Please visit https://net.potat0.cc/ for more information.
