@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "MOEICP=20221816" >> $GITHUB_ENV
           echo "OSS_BUCTET=potat0-box" >> $GITHUB_ENV
-          echo "REFRESH_URL=xn--udsw05j.space" >> $GITHUB_ENV
+          echo "REFRESH_URL=www.xn--udsw05j.space" >> $GITHUB_ENV
           mv source/favicon/* source/
           rm -rf source/favicon
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
@@ -53,15 +53,15 @@ jobs:
         run: |
           echo "MOEICP=20241816" >> $GITHUB_ENV
           echo "OSS_BUCTET=potat0-box-cn" >> $GITHUB_ENV
-          echo "REFRESH_URL=potat0.cc" >> $GITHUB_ENV
-          sed -i 's/potat0.cc/土豆.space/g' _config.yml
-          sed -i 's/potat0.cc/土豆.space/g' source/manifest.json
-          sed -i 's/potat0.cc/土豆.space/g' source/robots.txt
+          echo "REFRESH_URL=www.potat0.cc" >> $GITHUB_ENV
+          sed -i 's/www.potat0.cc/www.土豆.space/g' _config.yml
+          sed -i 's/www.potat0.cc/www.土豆.space/g' source/manifest.json
+          sed -i 's/www.potat0.cc/www.土豆.space/g' source/robots.txt
           sed -i 's/icp_text: 浙ICP备2021017952号-1/icp_text: 浙ICP备2021017952号-2/g' _config.fluid.yml
           sed -i 's/police_text: 浙公网安备33010602011812号/police_text: 浙公网安备33010602013468号/g' _config.fluid.yml
           sed -i 's/police_code: 33010602011812/police_code: 33010602013468/g' _config.fluid.yml
           sed -i 's/moeicp_code: 20221816/moeicp_code: 20241816/g' _config.fluid.yml
-          perl -0777 -np -i -e 's,(-{10}\n\n).*土豆\.space.*(\n\n-{10}),\1这是本站的一个中文域名的实验性站点，你可以在 [https://potat0.cc](https://potat0.cc/) 访问标准网站。\2,g' source/about/index.md
+          perl -0777 -np -i -e 's,(-{10}\n\n).*土豆\.space.*(\n\n-{10}),\1这是本站的一个中文域名的实验性站点，你可以在 [https://www.potat0.cc](https://www.potat0.cc/) 访问标准网站。\2,g' source/about/index.md
       - name: Build
         run: |
           hexo g

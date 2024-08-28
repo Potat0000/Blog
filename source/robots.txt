@@ -8,4 +8,4 @@ Allow: /tags/
 
 Disallow: /local-search.xml
 
-Sitemap: https://potat0.cc/sitemap.xml
+Sitemap: https://www.potat0.cc/sitemap.xml

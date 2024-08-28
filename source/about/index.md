@@ -10,7 +10,7 @@ Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking。
 
 ----------
 
-本站有一个中文域名的实验性站点，你可以在 [https://土豆.space](https://xn--udsw05j.space/) 访问。
+本站有一个中文域名的实验性站点，你可以在 [https://www.土豆.space](https://www.xn--udsw05j.space/) 访问。
 
 ----------
 

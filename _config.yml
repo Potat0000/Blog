@@ -10,7 +10,7 @@ default_layout: post
 new_post_name: :year-:month-:day-:title.md
 permalink: posts/:year:month:day/:title/
 post_asset_folder: true
-url: "https://potat0.cc/"
+url: "https://www.potat0.cc/"
 
 markdown:
   render:

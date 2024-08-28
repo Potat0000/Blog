@@ -2,7 +2,7 @@
     "name": "Potat0 Box",
     "short_name": "Potat0 Box",
     "description": "A box of Potat0",
-    "start_url": "https://potat0.cc/",
+    "start_url": "https://www.potat0.cc/",
     "icons": [
         {
             "src": "favicon.png",
@@ -25,7 +25,7 @@
             "name": "Home",
             "short_name": "Home",
             "description": "Back to homepage",
-            "url": "https://potat0.cc/",
+            "url": "https://www.potat0.cc/",
             "icons": [
                 {
                     "src": "favicon.png",
