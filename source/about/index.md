@@ -4,7 +4,7 @@ layout: about
 ---
 # Hi! You are here!
 
-我是 Potat0，就读于~~下沙小清华~~。
+我是 Potat0。毕业于 HDU，现就读于 NUS。
 
 Vidar-Team 20 级成员，原 Re 手，现在主要研究 Computer Networking。
 
