@@ -40,9 +40,8 @@ jobs:
           npm install
       - name: Get and Patch Lib Files
         run: |
-          echo "MOEICP=20221816" >> $GITHUB_ENV
           echo "OSS_BUCTET=potat0-box" >> $GITHUB_ENV
-          echo "REFRESH_URL=www.xn--udsw05j.space" >> $GITHUB_ENV
+          echo "TARGET_URL=www.potat0.cc" >> $GITHUB_ENV
           mv source/favicon/* source/
           rm -rf source/favicon
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
@@ -51,9 +50,8 @@ jobs:
       - name: Patch for CN-Domain website
         if: ${{ matrix.platform == 'cn' }}
         run: |
-          echo "MOEICP=20241816" >> $GITHUB_ENV
           echo "OSS_BUCTET=potat0-box-cn" >> $GITHUB_ENV
-          echo "REFRESH_URL=www.potat0.cc" >> $GITHUB_ENV
+          echo "TARGET_URL=www.xn--udsw05j.space" >> $GITHUB_ENV
           sed -i 's/www.potat0.cc/www.土豆.space/g' _config.yml
           sed -i 's/www.potat0.cc/www.土豆.space/g' source/manifest.json
           sed -i 's/www.potat0.cc/www.土豆.space/g' source/robots.txt
@@ -86,10 +84,19 @@ jobs:
           folder: public
           incremental: true
           skipSetting: true
-      - name: Refresh Aliyun CDN
-        uses: visionwx/ali-cdn-refresh@v0.1.1
-        with:
-          accessKeyId: ${{ secrets.ALIYUN_ACCESSKEY_ID }}
-          accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
-          type: Directory
-          path: https://${{ env.REFRESH_URL }}/
+      - name: Prepare URL List for Refresh and Prefetch
+        run: |
+          echo "https://$TARGET_URL/" > urls.txt
+          echo "https://$TARGET_URL/" > url-dir.txt
+          cd public
+          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://$TARGET_URL/|" >> ../urls.txt
+          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://$TARGET_URL/|" >> ../urls.txt
+          cd ..
+          echo "$(wc -l < urls.txt) URLs in total"
+      - name: Refresh and Prefetch Aliyun CDN
+        run: |
+          pip install aliyun-python-sdk-core aliyun-python-sdk-cdn
+          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./urls.txt -t clear -o File
+          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./url-dir.txt -t clear -o Directory
+          sleep 3
+          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./urls.txt -t push
