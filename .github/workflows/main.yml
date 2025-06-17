@@ -6,18 +6,12 @@ on:
   repository_dispatch:
   workflow_dispatch:
 jobs:
-  build:
-    name: Build
+  build-main:
+    name: Build Main
     runs-on: ubuntu-latest
     permissions:
       contents: read
       deployments: write
-    strategy:
-      fail-fast: false
-      matrix:
-        platform:
-          - main
-          - cn
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@main
@@ -40,18 +34,90 @@ jobs:
           npm install
       - name: Get and Patch Lib Files
         run: |
-          echo "OSS_BUCTET=potat0-box" >> $GITHUB_ENV
-          echo "TARGET_URL=www.potat0.cc" >> $GITHUB_ENV
+          mv source/favicon/* source/
+          rm -rf source/favicon
+          curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
+          curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
+          mv source/beian.ejs node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs
+      - name: Build
+        run: |
+          hexo g
+          sed -i 's,IEJUMPIEJUMPIEJUMP,if(/*@cc_on!@*/false||(!!window.MSInputMethodContext\&\&!!document.documentMode))window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);,g' $(grep IEJUMPIEJUMPIEJUMP -rl ./public)
+      - name: Clean up
+        run: |
+          cd public
+          rm -rf xml
+          rm img/default.png img/fluid.png
+      - name: Minify
+        uses: docker://devatherock/minify-js:3.0.0
+        with:
+          directory: public
+          add_suffix: false
+      - name: Deploy to TencentCloud COS
+        env:
+          SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          BUCKET: potat0-box-1307988268
+          REGION: ap-guangzhou
+        run: |
+          pip install coscmd
+          coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+          cd public
+          coscmd upload -rfs --delete ./ /
+      - name: Prepare URL List for Refresh and Prefetch
+        run: |
+          echo "https://www.potat0.cc/" > urls.txt
+          cd public
+          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
+          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
+          cd ..
+          echo "$(wc -l < urls.txt) URLs in total"
+      - name: Refresh and Prefetch TencentCloud CDN
+        env:
+          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          TENCENTCLOUD_REGION: ap-guangzhou
+        run: |
+          pip install tccli
+          tccli cdn PurgePathCache --cli-unfold-argument --Paths https://www.potat0.cc/ --FlushType delete
+          cat urls.txt | xargs -I {} tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls {}
+          cat urls.txt | xargs -I {} tccli cdn PushUrlsCache --cli-unfold-argument --Urls {}
+
+  build-cn:
+    name: Build CN
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@main
+        with:
+          node-version: 16.x
+      - name: Setup Python
+        uses: actions/setup-python@main
+        with:
+          python-version: 3.x
+      - name: Check out code
+        uses: actions/checkout@main
+      - name: Fetch Posts
+        run: |
+          git clone https://${{secrets.POST_CHECKOUT_TOKEN}}@github.com/Potat0000/Blog-Posts.git source/_posts
+          python3 build_script/gen_updatedtime.py
+          rm -rf source/_posts/.git*
+      - name: Install packages
+        run: |
+          npm install -g hexo-cli
+          npm install
+      - name: Get and Patch Lib Files
+        run: |
           mv source/favicon/* source/
           rm -rf source/favicon
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-light.min.css --create-dirs -o node_modules/prismjs/themes/prism-materiallight.css
           curl https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-material-oceanic.min.css --create-dirs -o node_modules/prismjs/themes/prism-materialoceanic.css
           mv source/beian.ejs node_modules/hexo-theme-fluid/layout/_partials/footer/beian.ejs
       - name: Patch for CN-Domain website
-        if: ${{ matrix.platform == 'cn' }}
         run: |
-          echo "OSS_BUCTET=potat0-box-cn" >> $GITHUB_ENV
-          echo "TARGET_URL=www.xn--udsw05j.space" >> $GITHUB_ENV
           sed -i 's/www.potat0.cc/www.土豆.space/g' _config.yml
           sed -i 's/www.potat0.cc/www.土豆.space/g' source/manifest.json
           sed -i 's/www.potat0.cc/www.土豆.space/g' source/robots.txt
@@ -79,18 +145,18 @@ jobs:
         with:
           accessKeyId: ${{ secrets.ALIYUN_ACCESSKEY_ID }}
           accessKeySecret: ${{ secrets.ALIYUN_ACCESSKEY_SECRET }}
-          bucket: ${{ env.OSS_BUCTET }}
+          bucket: potat0-box-cn
           endpoint: oss-cn-hangzhou.aliyuncs.com
           folder: public
           incremental: true
           skipSetting: true
       - name: Prepare URL List for Refresh and Prefetch
         run: |
-          echo "https://$TARGET_URL/" > urls.txt
-          echo "https://$TARGET_URL/" > url-dir.txt
+          echo "https://www.xn--udsw05j.space/" > urls.txt
+          echo "https://www.xn--udsw05j.space/" > url-dir.txt
           cd public
-          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://$TARGET_URL/|" >> ../urls.txt
-          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://$TARGET_URL/|" >> ../urls.txt
+          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://www.xn--udsw05j.space/|" >> ../urls.txt
+          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://www.xn--udsw05j.space/|" >> ../urls.txt
           cd ..
           echo "$(wc -l < urls.txt) URLs in total"
       - name: Refresh and Prefetch Aliyun CDN
