@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@main
         with:
-          node-version: 16.x
+          node-version: lts/*
       - name: Setup Python
         uses: actions/setup-python@main
         with:
@@ -53,35 +53,8 @@ jobs:
         with:
           directory: public
           add_suffix: false
-      - name: Deploy to TencentCloud COS
-        env:
-          SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
-          SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          BUCKET: potat0-box-1307988268
-          REGION: ap-guangzhou
-        run: |
-          pip install coscmd
-          coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-          cd public
-          coscmd upload -rfs --delete ./ /
-      - name: Prepare URL List for Refresh and Prefetch
-        run: |
-          echo "https://www.potat0.cc/" > urls.txt
-          cd public
-          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
-          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
-          cd ..
-          echo "$(wc -l < urls.txt) URLs in total"
-      - name: Refresh and Prefetch TencentCloud CDN
-        env:
-          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
-          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          TENCENTCLOUD_REGION: ap-guangzhou
-        run: |
-          pip install tccli
-          tccli cdn PurgePathCache --cli-unfold-argument --Paths https://www.potat0.cc/ --FlushType delete
-          cat urls.txt | xargs -I {} tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls {}
-          cat urls.txt | xargs -I {} tccli cdn PushUrlsCache --cli-unfold-argument --Urls {}
+      - name: Deploy to EdgeOne Pages
+        run: npx edgeone pages deploy ./public -n potat0-box -t ${{secrets.EDGEONE_API_TOKEN}}
 
   build-cn:
     name: Build CN
@@ -93,7 +66,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@main
         with:
-          node-version: 16.x
+          node-version: lts/*
       - name: Setup Python
         uses: actions/setup-python@main
         with:
@@ -162,7 +135,7 @@ jobs:
       - name: Refresh and Prefetch Aliyun CDN
         run: |
           pip install aliyun-python-sdk-core aliyun-python-sdk-cdn
-          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./urls.txt -t clear -o File
-          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./url-dir.txt -t clear -o Directory
+          python3 build_script/aliyun-cdn.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r ./urls.txt -t clear -o File
+          python3 build_script/aliyun-cdn.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r ./url-dir.txt -t clear -o Directory
           sleep 3
-          python3 build_script/aliyun-cdn.py -i ${{ secrets.ALIYUN_ACCESSKEY_ID }} -k ${{ secrets.ALIYUN_ACCESSKEY_SECRET }} -r ./urls.txt -t push
+          python3 build_script/aliyun-cdn.py -i ${{secrets.ALIYUN_ACCESSKEY_ID}} -k ${{secrets.ALIYUN_ACCESSKEY_SECRET}} -r ./urls.txt -t push
