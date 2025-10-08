@@ -53,8 +53,34 @@ jobs:
         with:
           directory: public
           add_suffix: false
-      - name: Deploy to EdgeOne Pages
-        run: npx edgeone pages deploy ./public -n potat0-box -t ${{secrets.EDGEONE_API_TOKEN}}
+      - name: Deploy to TencentCloud COS
+        env:
+          SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          REGION: ap-guangzhou
+          BUCKET: potat0-box-1307988268
+        run: |
+          pip install coscmd
+          coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+          cd public
+          coscmd upload -rfs --delete ./ /
+      - name: Prepare URL List for Refresh and Prefetch
+        run: |
+          echo "https://www.potat0.cc/" > urls.txt
+          cd public
+          find . -type f -not -path '*/.*' -not -path './index.html' -not -path './posts/*' | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
+          find . -type f -not -path '*/.*' -a -path './posts/*' -a \( -name '*.html' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.bmp' -o -name '*.gif' -o -name '*.svg' -o -name '*.webp' \) | sed "s|^./|https://www.potat0.cc/|" >> ../urls.txt
+          cd ..
+          echo "$(wc -l < urls.txt) URLs in total"
+      - name: Refresh and Prefetch TencentCloud EdgeOne
+        env:
+          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          TENCENTCLOUD_REGION: ap-guangzhou
+        run: |
+          pip install tccli
+          tccli teo CreatePurgeTask --cli-unfold-argument --ZoneId zone-3d2iwq53tqx6 --Type purge_host --Targets 'www.potat0.cc'
+          cat urls.txt | xargs -I {} tccli teo CreatePrefetchTask --cli-unfold-argument --ZoneId zone-3d2iwq53tqx6 --Targets {}
 
   build-cn:
     name: Build CN
