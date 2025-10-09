@@ -2,7 +2,7 @@
   "name": "potat0-box",
   "version": "1.0.0",
   "hexo": {
-    "version": "7.3.0"
+    "version": "8.0.0"
   },
   "license": "GPL-3.0-only",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "git+https://github.com/Potat0000/Blog.git"
   },
   "dependencies": {
-    "hexo": "^7.3.0",
+    "hexo": "^8.0.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -23,7 +23,7 @@
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-fluid": "^1.9.8",
+    "hexo-theme-fluid": "github:fluid-dev/hexo-theme-fluid#master",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-cjk-breaks": "^2.0.0",
     "markdown-it-container": "^4.0.0",
@@ -34,7 +34,7 @@
     "markdown-it-pangu": "^1.0.2",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
-    "markdown-it-table-of-contents": "^0.9.0",
+    "markdown-it-table-of-contents": "^1.1.0",
     "markdown-it-task-lists": "^2.1.1"
   }
 }
