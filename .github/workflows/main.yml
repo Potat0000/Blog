@@ -57,7 +57,7 @@ jobs:
         env:
           SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
           SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          REGION: ap-guangzhou
+          REGION: ap-shanghai
           BUCKET: potat0-box-1307988268
         run: |
           pip install coscmd
@@ -76,7 +76,7 @@ jobs:
         env:
           TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
           TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          TENCENTCLOUD_REGION: ap-guangzhou
+          TENCENTCLOUD_REGION: ap-shanghai
         run: |
           pip install tccli
           tccli teo CreatePurgeTask --cli-unfold-argument --ZoneId zone-3d2iwq53tqx6 --Type purge_host --Targets 'www.potat0.cc'
