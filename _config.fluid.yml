@@ -282,9 +282,23 @@ web_analytics:
     # If true, ignore localhost & 127.0.0.1
     ignore_local: false
 
+  # OpenKounter 计数统计（基于 EdgeOne Pages），可用于 PV UV 展示
+  # OpenKounter count statistics (based on EdgeOne Pages), which can be used for PV UV display
+  # See: https://github.com/Mintimate/open-kounter
+  openkounter:
+    # OpenKounter API 服务器地址
+    # OpenKounter API server URL
+    server_url: https://open-kounter.mintimate.cn
+    # 统计页面时获取路径的属性，通常使用 window.location.pathname
+    # Get the attribute of the page path during statistics
+    path: window.location.pathname
+    # 开启后不统计本地路径（localhost、127.0.0.1、[::1]）
+    # If true, ignore localhost & 127.0.0.1 & [::1]
+    ignore_local: false
+
   # Umami Analytics，仅支持自部署。如果要展示 PV UV 需要填写所有配置项，否则只填写 `src` 和 `website_id` 即可
   # Umami Analytics, only Self-host support. If you want to display PV UV need to set all config items, otherwise only set 'src' and 'website_id'
-  # See: https://umami.is/docs/authentication
+  # See: https://umami.is/docs
   umami:
     # umami js 文件地址，需要在 umami 后台创建站点后获取
     # umami js file url, get after create website in umami
@@ -408,6 +422,10 @@ search:
 # 首屏图片的相关配置
 # Config of the big image on the first screen
 banner:
+  # 是否开启所有页面的随机头图，仅在页面对应 banner_img 为空时生效，将图片放在 source/img/random/ 目录下
+  # Enable random banner for all pages, only works when banner_img is empty, put images in the directory `source/img/random/`
+  random_img: false
+
   # 视差滚动，图片与板块会随着屏幕滚动产生视差效果
   # Scrolling parallax
   parallax: true
@@ -463,9 +481,9 @@ footer:
   statistics:
     enable: false
 
-    # 统计数据来源，使用 leancloud, umami 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
-    # Data source. If use leancloud, umami, you need to set the parameter in `web_analytics`
-    # Options: busuanzi | leancloud | umami
+    # 统计数据来源，使用 leancloud, umami, openkounter 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
+    # Data source. If use leancloud, umami, openkounter, you need to set the parameter in `web_analytics`
+    # Options: busuanzi | leancloud | umami | openkounter
     source: "leancloud"
 
   # 国内大陆服务器的备案信息
@@ -657,6 +675,9 @@ post:
   # Table of contents (TOC) in the sidebar
   toc:
     enable: true
+    # 进入文章时是否默认展开全部目录
+    # Expand all TOC items on enter
+    expand_all: true
 
     # 置于板块的左侧或右侧
     # place in the board
@@ -791,7 +812,7 @@ disqus:
   # See: https://github.com/SukkaW/DisqusJS
   disqusjs: false
   apikey:
-    - 'KEY1'
+    - "KEY1"
     #- 'KEY2'
   api: https://disqus.skk.moe/disqus/
   admin:
